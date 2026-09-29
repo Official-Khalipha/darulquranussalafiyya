@@ -5,28 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Karatu</title>
 <style>
- body{margin:0;background:#111;height:100vh;display:flex;flex-direction:column}
- .top{padding:10px;background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center}
+ body{margin:0;background:#000;height:100vh;display:flex;flex-direction:column}
+ .top{padding:12px;background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333}
  .top a{color:#d4a017;text-decoration:none;font-weight:bold}
- iframe{flex:1;border:0;width:100%}
+ #viewer{flex:1;border:0;width:100%;height:100%}
 </style>
 </head>
 <body>
 <div class="top">
  <a href="littattafan-musulunci.html">← Koma</a>
- <span id="title">Ana bude littafi...</span>
- <a id="dl" href="#" download>Sauke</a>
+ <span id="t">Karatu...</span>
+ <a id="dl" href="#" download style="color:#d4a017">Sauke</a>
 </div>
-<iframe id="pdfFrame"></iframe>
+<iframe id="viewer"></iframe>
 <script>
- const params = new URLSearchParams(location.search);
- const file = params.get('file');
+ const file = new URLSearchParams(location.search).get('file');
  if(file){
-   document.getElementById('pdfFrame').src = file;
+   const fullUrl = location.origin + '/' + file;
+   // Wannan shine viewer da zai bude PDF a waya ba tare da download ba
+   document.getElementById('viewer').src = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(fullUrl)}`;
    document.getElementById('dl').href = file;
-   document.getElementById('title').textContent = file.split('/').pop();
- } else {
-   document.body.innerHTML = "Ba a samu littafi ba";
+   document.getElementById('t').textContent = file.split('/').pop();
  }
 </script>
 </body>
