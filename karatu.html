@@ -1,32 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="ha">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Karatu</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#1a1a1a;color:#fff;font-family:sans-serif;height:100vh;display:flex;flex-direction:column}
-.header{background:#000;padding:10px 15px;display:flex;justify-content:space-between;align-items:center}
-.header a{color:#f0b429;text-decoration:none;font-weight:bold}
-iframe{flex:1;width:100%;border:none;background:#fff}
+body{background:#525659;font-family:sans-serif}
+.top{position:sticky;top:0;z-index:10;background:#000;color:#fff;padding:10px 15px;display:flex;justify-content:space-between;align-items:center}
+.top a{color:#f0b429;text-decoration:none;font-weight:bold}
+#pdf-container{padding:10px;display:flex;flex-direction:column;align-items:center;gap:10px}
+canvas{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.5);max-width:100%;}
 </style>
 </head>
 <body>
-<div class="header">
-<a href="littattafai.html">← Koma</a>
-<div id="name" style="font-size:13px;opacity:0.8">...</div>
-<a href="#" id="down" download>Sauke</a>
+<div class="top">
+<a href="littattafan-musulunci.html">← Koma</a>
+<span id="fname" style="font-size:12px">...</span>
+<a id="dl" href="#" download>Sauke</a>
 </div>
-<iframe id="view"></iframe>
+<div id="pdf-container"></div>
 <script>
-const p = new URLSearchParams(window.location.search).get('file');
-if(p){
-  document.getElementById('name').textContent = p.split('/').pop();
-  document.getElementById('down').href = p;
-  const abs = "https://khalipha.github.io/" + p;
-  const viewer = "https://mozilla.github.io/pdf.js/web/viewer.html?file=" + encodeURIComponent(abs);
-  document.getElementById('view').src = viewer;
+const urlParams = new URLSearchParams(window.location.search);
+const file = urlParams.get('file');
+document.getElementById('fname').textContent = file ? file.split('/').pop() : '';
+document.getElementById('dl').href = file || '#';
+
+if(file){
+ const pdfjsLib = window['pdfjs-dist/build/pdf'];
+ pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+ pdfjsLib.getDocument(file).promise.then(pdf=>{
+   for(let i=1;i<=pdf.numPages;i++){
+     pdf.getPage(i).then(page=>{
+       const viewport = page.getViewport({scale:1.5});
+       const canvas = document.createElement('canvas');
+       const ctx = canvas.getContext('2d');
+       canvas.height = viewport.height;
+       canvas.width = viewport.width;
+       document.getElementById('pdf-container').appendChild(canvas);
+       page.render({canvasContext:ctx,viewport:viewport});
+     });
+   }
+ }).catch(e=>{
+   document.getElementById('pdf-container').innerHTML = '<p style="color:white;padding:20px">Bai samu littafin ba. Tabbata sunan fayil karami ne: '+file+'</p>';
+ });
 }
 </script>
 </body>
