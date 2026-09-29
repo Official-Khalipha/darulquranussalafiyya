@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karatu</title>
+<style>
+ body{margin:0;background:#111;height:100vh;display:flex;flex-direction:column}
+ .top{padding:10px;background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center}
+ .top a{color:#d4a017;text-decoration:none;font-weight:bold}
+ iframe{flex:1;border:0;width:100%}
+</style>
+</head>
+<body>
+<div class="top">
+ <a href="littattafan-musulunci.html">← Koma</a>
+ <span id="title">Ana bude littafi...</span>
+ <a id="dl" href="#" download>Sauke</a>
+</div>
+<iframe id="pdfFrame"></iframe>
+<script>
+ const params = new URLSearchParams(location.search);
+ const file = params.get('file');
+ if(file){
+   document.getElementById('pdfFrame').src = file;
+   document.getElementById('dl').href = file;
+   document.getElementById('title').textContent = file.split('/').pop();
+ } else {
+   document.body.innerHTML = "Ba a samu littafi ba";
+ }
+</script>
+</body>
+</html>
