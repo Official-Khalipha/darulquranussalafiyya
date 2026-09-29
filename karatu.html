@@ -1,32 +1,33 @@
 <!DOCTYPE html>
-<html lang="ha">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Karatu</title>
 <style>
- body{margin:0;background:#000;height:100vh;display:flex;flex-direction:column}
- .top{padding:12px;background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333}
- .top a{color:#d4a017;text-decoration:none;font-weight:bold}
- #viewer{flex:1;border:0;width:100%;height:100%}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1a1a1a;color:#fff;font-family:sans-serif;height:100vh;display:flex;flex-direction:column}
+.header{background:#000;padding:10px 15px;display:flex;justify-content:space-between;align-items:center}
+.header a{color:#f0b429;text-decoration:none;font-weight:bold}
+iframe{flex:1;width:100%;border:none;background:#fff}
 </style>
 </head>
 <body>
-<div class="top">
- <a href="littattafai.html">← Koma</a>
- <span id="t">Karatu...</span>
- <a id="dl" href="#" download style="color:#d4a017">Sauke</a>
+<div class="header">
+<a href="littattafan-musulunci.html">← Koma</a>
+<div id="name" style="font-size:13px;opacity:0.8">...</div>
+<a href="#" id="down" download>Sauke</a>
 </div>
-<iframe id="viewer"></iframe>
+<iframe id="view"></iframe>
 <script>
- const file = new URLSearchParams(location.search).get('file');
- if(file){
-   const fullUrl = location.origin + '/' + file;
-   // Wannan shine viewer da zai bude PDF a waya ba tare da download ba
-   document.getElementById('viewer').src = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(fullUrl)}`;
-   document.getElementById('dl').href = file;
-   document.getElementById('t').textContent = file.split('/').pop();
- }
+const p = new URLSearchParams(window.location.search).get('file');
+if(p){
+  document.getElementById('name').textContent = p.split('/').pop();
+  document.getElementById('down').href = p;
+  const abs = "https://khalipha.github.io/" + p;
+  const viewer = "https://mozilla.github.io/pdf.js/web/viewer.html?file=" + encodeURIComponent(abs);
+  document.getElementById('view').src = viewer;
+}
 </script>
 </body>
 </html>
