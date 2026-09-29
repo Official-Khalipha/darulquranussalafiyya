@@ -3,49 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karatu</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<title>Karanta Littafi - Darul Qur'anus Salafiyya</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#525659;font-family:sans-serif}
-.top{position:sticky;top:0;z-index:10;background:#000;color:#fff;padding:10px 15px;display:flex;justify-content:space-between;align-items:center}
-.top a{color:#f0b429;text-decoration:none;font-weight:bold}
-#pdf-container{padding:10px;display:flex;flex-direction:column;align-items:center;gap:10px}
-canvas{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.5);max-width:100%;}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:#f3f6f1;
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+}
+
+/* ===== HEADER ===== */
+.header{
+  background:#0f5d2e;
+  color:white;
+  padding:14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.header h2{
+  font-size:16px;
+  text-align:center;
+  flex:1;
+}
+
+.back-btn{
+  color:white;
+  text-decoration:none;
+  background:rgba(255,255,255,0.15);
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:13px;
+}
+
+/* ===== PDF READER ===== */
+.reader{
+  width:100%;
+  height:calc(100vh - 65px);
+  background:#333;
+}
+
+/* PDF viewer */
+#pdfViewer{
+  width:100%;
+  height:100%;
+  border:none;
+}
 </style>
 </head>
+
 <body>
-<div class="top">
-<a href="littattafan-musulunci.html">← Koma</a>
-<span id="fname" style="font-size:12px">...</span>
-<a id="dl" href="#" download>Sauke</a>
+
+<!-- HEADER -->
+<div class="header">
+
+  <a href="javascript:history.back()" class="back-btn">
+    ⬅️ Komawa
+  </a>
+
+  <h2>📖 Karatun Littafi</h2>
+
+  <div style="width:65px;"></div>
+
 </div>
-<div id="pdf-container"></div>
+
+<!-- PDF -->
+<div class="reader">
+
+  <iframe id="pdfViewer"></iframe>
+
+</div>
+
 <script>
-const urlParams = new URLSearchParams(window.location.search);
-const file = urlParams.get('file');
-document.getElementById('fname').textContent = file ? file.split('/').pop() : '';
-document.getElementById('dl').href = file || '#';
+
+/* ===== KARƆ PDF DAGA URL ===== */
+
+const params = new URLSearchParams(window.location.search);
+
+const file = params.get("file");
+
+const viewer = document.getElementById("pdfViewer");
 
 if(file){
- const pdfjsLib = window['pdfjs-dist/build/pdf'];
- pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
- pdfjsLib.getDocument(file).promise.then(pdf=>{
-   for(let i=1;i<=pdf.numPages;i++){
-     pdf.getPage(i).then(page=>{
-       const viewport = page.getViewport({scale:1.5});
-       const canvas = document.createElement('canvas');
-       const ctx = canvas.getContext('2d');
-       canvas.height = viewport.height;
-       canvas.width = viewport.width;
-       document.getElementById('pdf-container').appendChild(canvas);
-       page.render({canvasContext:ctx,viewport:viewport});
-     });
-   }
- }).catch(e=>{
-   document.getElementById('pdf-container').innerHTML = '<p style="color:white;padding:20px">Bai samu littafin ba. Tabbata sunan fayil karami ne: '+file+'</p>';
- });
+
+  viewer.src = file;
+
+}else{
+
+  document.body.innerHTML = `
+    <div style="
+      text-align:center;
+      padding:50px 20px;
+      font-family:Arial;
+    ">
+      <h2>❌ Ba a sami littafin ba</h2>
+
+      <p style="margin-top:10px;">
+        Babu PDF da aka turo domin karantawa.
+      </p>
+
+      <br>
+
+      <a href="index.html"
+         style="
+         display:inline-block;
+         padding:10px 18px;
+         background:#0f5d2e;
+         color:white;
+         text-decoration:none;
+         border-radius:20px;
+         ">
+         ⬅️ Koma Gida
+      </a>
+    </div>
+  `;
+
 }
+
 </script>
+
 </body>
 </html>
