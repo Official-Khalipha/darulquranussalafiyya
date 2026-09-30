@@ -1,134 +1,26 @@
 <!DOCTYPE html>
-<html lang="ha">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Karanta Littafi - Darul Qur'anus Salafiyya</title>
-
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body{
-  background:#f3f6f1;
-  font-family:Arial,sans-serif;
-  min-height:100vh;
-}
-
-/* ===== HEADER ===== */
-.header{
-  background:#0f5d2e;
-  color:white;
-  padding:14px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.header h2{
-  font-size:16px;
-  text-align:center;
-  flex:1;
-}
-
-.back-btn{
-  color:white;
-  text-decoration:none;
-  background:rgba(255,255,255,0.15);
-  padding:8px 12px;
-  border-radius:20px;
-  font-size:13px;
-}
-
-/* ===== PDF READER ===== */
-.reader{
-  width:100%;
-  height:calc(100vh - 65px);
-  background:#333;
-}
-
-/* PDF viewer */
-#pdfViewer{
-  width:100%;
-  height:100%;
-  border:none;
-}
-</style>
+<title>Karatu</title>
+<style>body{margin:0;background:#000;height:100vh;display:flex;flex-direction:column} .h{background:#000;color:#fff;padding:12px;display:flex;justify-content:space-between} .h a{color:#f0b429;text-decoration:none;font-weight:bold} iframe{flex:1;border:0;background:#fff}</style>
 </head>
-
 <body>
-
-<!-- HEADER -->
-<div class="header">
-
-  <a href="javascript:history.back()" class="back-btn">
-    ⬅️ Komawa
-  </a>
-
-  <h2>📖 Karatun Littafi</h2>
-
-  <div style="width:65px;"></div>
-
+<div class="h">
+<a href="littattafan-musulunci.html">← Koma</a>
+<span id="n" style="font-size:12px"></span>
+<a id="d" href="#">Sauke</a>
 </div>
-
-<!-- PDF -->
-<div class="reader">
-
-  <iframe id="pdfViewer"></iframe>
-
-</div>
-
+<iframe id="v"></iframe>
 <script>
-
-/* ===== KARƆ PDF DAGA URL ===== */
-
-const params = new URLSearchParams(window.location.search);
-
-const file = params.get("file");
-
-const viewer = document.getElementById("pdfViewer");
-
-if(file){
-
-  viewer.src = file;
-
-}else{
-
-  document.body.innerHTML = `
-    <div style="
-      text-align:center;
-      padding:50px 20px;
-      font-family:Arial;
-    ">
-      <h2>❌ Ba a sami littafin ba</h2>
-
-      <p style="margin-top:10px;">
-        Babu PDF da aka turo domin karantawa.
-      </p>
-
-      <br>
-
-      <a href="index.html"
-         style="
-         display:inline-block;
-         padding:10px 18px;
-         background:#0f5d2e;
-         color:white;
-         text-decoration:none;
-         border-radius:20px;
-         ">
-         ⬅️ Koma Gida
-      </a>
-    </div>
-  `;
-
+const f = new URLSearchParams(location.search).get('file');
+if(f){
+ const full = "https://khalipha.github.io/"+f;
+ document.getElementById('n').textContent = f.split('/').pop();
+ document.getElementById('d').href = f;
+ document.getElementById('v').src = "https://docs.google.com/gview?embedded=true&url="+encodeURIComponent(full);
 }
-
 </script>
-
 </body>
 </html>
