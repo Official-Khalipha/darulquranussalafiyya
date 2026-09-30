@@ -1,26 +1,10 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karatu</title>
-<style>body{margin:0;background:#000;height:100vh;display:flex;flex-direction:column} .h{background:#000;color:#fff;padding:12px;display:flex;justify-content:space-between} .h a{color:#f0b429;text-decoration:none;font-weight:bold} iframe{flex:1;border:0;background:#fff}</style>
-</head>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Karatu</title>
+<style>body{margin:0;background:#525659;height:100vh;display:flex;flex-direction:column} .h{background:#0f5d2e;color:#fff;padding:12px;display:flex;justify-content:space-between;align-items:center} .h a{color:#f0b429;text-decoration:none;font-weight:bold} iframe{flex:1;border:0;background:#fff}</style></head>
 <body>
-<div class="h">
-<a href="littattafan-musulunci.html">← Koma</a>
-<span id="n" style="font-size:12px"></span>
-<a id="d" href="#">Sauke</a>
-</div>
+<div class="h"><a href="littattafan-musulunci.html">← Koma</a><span id="n" style="font-size:12px"></span><a id="d" href="#" style="color:#fff;background:#1a5c36;padding:6px 12px;border-radius:15px;text-decoration:none">⬇ Sauke</a></div>
 <iframe id="v"></iframe>
 <script>
-const f = new URLSearchParams(location.search).get('file');
-if(f){
- const full = "https://khalipha.github.io/"+f;
- document.getElementById('n').textContent = f.split('/').pop();
- document.getElementById('d').href = f;
- document.getElementById('v').src = "https://docs.google.com/gview?embedded=true&url="+encodeURIComponent(full);
-}
-</script>
-</body>
-</html>
+const f=new URLSearchParams(location.search).get('file');
+if(f){const full="https://khalipha.github.io/"+f;document.getElementById('n').textContent=f.split('/').pop();document.getElementById('d').href=f;document.getElementById('v').src="https://docs.google.com/gview?embedded=true&url="+encodeURIComponent(full);}
+</script></body></html>
