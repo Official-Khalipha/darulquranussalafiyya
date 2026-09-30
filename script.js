@@ -12,7 +12,6 @@ function reset(){
   document.getElementById('count').innerText = 0;
 }
 
-
 const ayahs=[
 {ar:"وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا",ha:"Duk wanda yayi taqawa, Allah zai sanya masa mafita",ref:"Suratu At-Talaq: 2"},
 {ar:"إِنَّ مَعَ الْعُسْرِ يُسْرًا",ha:"Lallai tare da tsanani akwai sauki",ref:"Suratu Ash-Sharh: 6"},
@@ -60,3 +59,5 @@ try{
 document.getElementById('greg-date').innerText = "📅 "+today.toLocaleDateString('en-US',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
 document.getElementById('hijri-date').innerText = "☪️ "+new Intl.DateTimeFormat('en-SA-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric'}).format(today).replace(' AH','')+" AH";
 }
+
+  
