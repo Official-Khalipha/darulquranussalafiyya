@@ -3,98 +3,382 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yadda Ake Alwala</title>
+<title>Alwala - Abubuwanda Suke Kafin Fara Alwala</title>
 <style>
   :root{--green:#0d2e1a;--gold:#c9a227;--bg:#fdfcf5;}
   *{box-sizing:border-box; margin:0; padding:0;}
-  body{font-family:'Segoe UI', Tahoma, sans-serif; background:var(--bg); color:#222; line-height:1.8;}
-  .top-header{background:var(--green); color:#fff; padding:20px 15px; text-align:center; border-radius:0 0 15px 15px; margin:0px; z-index:100;}
-  .header-text h1{font-size:24px; margin:0 0 4px; color:#fff; font-weight:800; text-transform:uppercase; letter-spacing:0.5px;}
-  .header-text p{font-size:14px; color:#c9d9ce; margin:0 0 15px;}
+  body{font-family:'Segoe UI', Tahoma, sans-serif; background:var(--bg); color:#222; line-height:1.85;}
+  .top-header{background:var(--green); color:#fff; padding:20px 15px; text-align:center; border-radius:25px;}
+  .header-text h1{font-size:19px; margin:0 0 4px; color:#fff; font-weight:800; text-transform:uppercase;}
+  .header-text p{font-size:14px; color:#f5d76e; margin:0 0 15px;}
+  .alwala-header{background:var(--green); color:#fff; padding:20px 15px; text-align:center; border-radius:0 0 15px 15px; margin:0px; position: sticky;top:0; z-index:100;}
   .btn-header{display:inline-block; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.35); color:#fff; padding:8px 22px; border-radius:25px; text-decoration:none; font-size:14px; font-weight:bold;}
-  
-  .moving-text{width:100%; overflow:hidden; white-space:nowrap; background:#fff; padding:10px 0; border-bottom:2px solid #e8e0c0; margin-bottom:10px;}
-  .moving-text p{margin:0; display:inline-block; font-size:16px; color:var(--green); font-weight:bold; animation:moveText 18s linear infinite;}
-  @keyframes moveText{from{transform:translateX(100%)} to{transform:translateX(-100%)}}
-
-  .content{padding:15px; max-width:800px; margin:0 auto;}
+  .content{padding:10px; max-width:800px; margin:0 auto;}
   .card{background:#fff; border:1px solid #e8e0c0; border-radius:12px; padding:16px; margin:14px 0; box-shadow:0 2px 6px rgba(0,0,0,0.04);}
   .card h3{color:var(--green); font-size:18px; margin-bottom:10px; border-left:4px solid var(--gold); padding-left:10px;}
-  .card p{font-size:15px; text-align:justify;}
-  .ayah-box{background:#fdf6e3; border:1px solid #e7d9a3; border-right:4px solid var(--gold); padding:12px; border-radius:8px; margin:12px 0; text-align:center;}
-  .dark-box{background:var(--green); color:#fff; padding:15px; border-radius:10px; margin:15px 0; text-align:center;}
+  .card h4{color:var(--green); font-size:17px; margin:18px 0 10px 0; padding-left:10px;}
+  .ayah-box{background:#fdf6e3; border:1px solid #e7d9a3; border-right:4px solid var(--gold); padding:14px; border-radius:8px; margin:12px 0; text-align:center; direction:rtl; font-size:20px; line-height:2; position:relative;}
+  .ayah-box span{font-size:13.5px; direction:ltr; display:block; margin-top:10px; text-align:left; color:#333; line-height:1.7; font-family:'Segoe UI', sans-serif;}
+  .quran-box{background:#f1f1b9a9; border-right: 4px solid var(--green); padding:12px; border-radius:8px; margin:12px 0; text-align:center; direction:rtl; font-size:17px; position:relative;}
+  .dark-box{background:var(--green); color:#fff; padding:15px; border-radius:10px; margin:15px 0; font-size:14px; line-height:1.9;}
+  .note-box{background:#eef6ef; border-left:4px solid var(--green); padding:10px 12px; border-radius:6px; margin:12px 0; font-size:13px;}
+  .badge{display:inline-block; background:#eef6ef; color:var(--green); padding:3px 10px; border-radius:20px; font-size:11px; font-weight:bold; border:1px solid #c8e6c9;}
   .bottom-nav{text-align:center; padding:25px 15px; border-top:2px solid #e8e0c0; margin-top:25px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap;}
   .btn-home{background:var(--green); color:#fff; padding:10px 22px; border-radius:25px; text-decoration:none; font-size:14px; font-weight:bold;}
   .btn-top{background:#fff; color:var(--green); border:1.5px solid var(--green); padding:10px 22px; border-radius:25px; text-decoration:none; font-size:14px; font-weight:bold;}
+  .hadith-box { background: linear-gradient(135deg, #f0fdf4 50%, #dcfce7 100%); border-right: 4px solid #16a34a; border-left: 1px solid #bbf7d0; border-top: 1px solid #bbf7d0; border-bottom: 1px solid #bbf7d0; border-radius: 12px; padding: 16px 18px; margin: 14px 0; font-family: 'Amiri', 'Traditional Arabic', serif; font-size: 1.15em; line-height: 2; color: #14532d; position: relative; box-shadow: 0 2px 8px rgba(22, 163, 74, 0.08);}
+  .hadith-box::before { content: "﷽ Hadisi"; position: absolute; top: -10px; right: 14px; background: #16a34a; color: white; font-size: 0.65em; font-family: sans-serif; padding: 2px 10px; border-radius: 20px; letter-spacing: 0.5px;}
+  .hadith-box span {display: block; margin-top: 10px;  font-family: sans-serif; font-size: 0.85em; line-height: 1.6;  color: #334159; border-top: 1px dashed #86efac; padding-top: 8px;}
+  .danger-box{ background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-right: 4px solid #dc2626; border-left: 1px solid #fecaca; border-top: 1px solid #fecaca; border-bottom: 1px solid #fecaca; border-radius: 12px; padding: 14px 16px; margin: 14px 0; color: #7f1d1d; font-size: 14px; line-height: 1.8; position: relative; box-shadow: 0 2px 8px rgba(220, 38, 38, 0.08);}
+  .danger-box::before{ content: "⚠️ Jan Hankali"; position: absolute; top: -10px; left: 14px; background: #dc2626; color: white; font-size: 11px; font-weight: bold; padding: 2px 10px;  border-radius: 20px;}
+  .moving-text{width:100%; overflow:hidden; white-space:nowrap; background:#fff; padding:10px 0; border-bottom:2px solid #e8e0c0; margin-bottom:10px;}
+  .moving-text p{margin:0; display:inline-block; font-size:16px; color:var(--green); font-weight:bold; animation:moveText 18s linear infinite;}
+  @keyframes moveText{from{transform:translateX(100%)} to{transform:translateX(-100%)}}
 </style>
 </head>
 <body id="top">
 
 <header class="top-header">
   <div class="header-text">
-    <h1>YADDA AKE ALWALA</h1>
-    <p>Haske Na Musulunci</p>
-    <a href="index.html" class="btn-header">← Koma Shafin Gida</a>
+    <h1>💧 SIFFAR ALWALAR ANNABI ﷺ</h1>
+    <p>Attasfiyya Summat Tarbiyya</p>
+    <a href="sallah.html" class="btn-header">← Koma Shafin Baya</a>
   </div>
 </header>
-
-<div class="moving-text">
-  <p>Maraba da zuwa Markazus Salafiyya — Don koyan Ibada cikin sauƙi.</p>
-</div>
+  <div class="moving-text"><p>Maraba da zuwa Markazus Salafiyya — Don koyan Ibada cikin sauƙi bisa AlQur'ani da Sunnah.</p></div>
 
 <div class="content">
 
-  <div class="card">
-    <h3>1. Ruwa</h3>
-    <p>Zaka samu ruwa mai tsarki mai tsarkakewa wato Sakekken Ruwa, Shine wanda Launinsa ko Ɗanɗanonsa ko Kamshinsa bai jirkitashi ba, Misalinsa: Ruwan Sama ko Ruwan Kogi ko Ruwan Fanfo ko na Rijiya d.s.s. Sai kayi tsarki (Idan da buƙata).</p>
+   <div class="card">
+    <h3>Gabatarwa: Abubuwan da suke Kafin Fara Alwala</h3>
+    <p>Akwai abubuwa guda 4 da Musulmi ya kamata ya kammala kafin ya fara alwala:</p>
+    <div class="dark-box">
+      <b>Jerin Abubuwan:</b><br>
+      ① <b>Tsarki</b> (Bahaya ko Fitsari - Istinja'i)<br>
+      ② <b>Aswaki</b> (Yin Siwaka)<br>
+      ③ <b>Niyya</b><br>
+      ④ <b>Basmala</b> (Bismillah)
+    </div>
   </div>
 
   <div class="card">
-    <h3>2. Niyya</h3>
-    <p>Sannan sai ka ƙudirci Niyya acikin Zuciyarka (Abin lura: Ba'a furta Niyya da baki wannan Bid'a ne, bashi da asali a Addini), Sai ka fara da Bismillah kace: <b>"Bismillah"</b>.</p>
+    <h3>1a. Tsarki - Tsarkin Fitsari</h3>
+    <p>Anaso mutum bayan ya gama fitsari a cikin banɗaki ko wani keɓantaccen waje wanda al'aurarsa bazata bayyana ba, to ya ɗan saurara kaɗan ko kuma ya ɗan danna jijiyar fitsari wacce take tsakanin duburarsa da al'aurarsa, ko ya yi numfashi mai nauyi ta yadda idan da ragowar fitsarin daya maƙale to zai samu ya fito gaba ɗaya. Domin akwai azaba ga wa'ƴanda basa tsarkaka daga fitsari, kamar yadda hadisi zaizo akan haka, bayan mutum ya kammala sai yayi tsarki da ruwansa mai tsarki mai tsarkakewa.</p>
+    
+    <div class="ayah-box">
+      وَثِيَابَكَ فَطَهِّرْ
+      <span>"Kuma tufafinka ka tsarkake su"</span>
+    </div>
+<span class="badge">Suratul Muddathir: 4</span>
+    <div class="hadith-box">
+      أَكْثَرُ عَذَابِ الْقَبْرِ مِنَ الْبَوْلِ
+      <span><b>Fassara:</b> Mafi yawan azabar kabari daga fitsari ne (rashin kiyayewa daga gare shi).</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Hakim 1/183 - Sahih</span>
+      <span class="badge">Albani - Sahihul Jami' 1213</span>
+    </div>
+
+    <h4>Hadisin Mutum Biyu Da Akewa Azaba a Kabari</h4>
+    <div class="hadith-box">
+      عَنِ ابْنِ عَبَّاسٍ رَضِيَ اللَّهُ عَنْهُمَا قَالَ: مَرَّ النَّبِيُّ ﷺ بِحَائِطٍ مِنْ حِيطَانِ الْمَدِينَةِ فَسَمِعَ صَوْتَ إِنْسَانَيْنِ يُعَذَّبَانِ فِي قُبُورِهِمَا، فَقَالَ رَسُولُ اللَّهِ ﷺ: "يُعَذَّبَانِ، وَمَا يُعَذَّبَانِ فِي كَبِيرٍ، بَلَى، كَانَ أَحَدُهُمَا لَا يَسْتَتِرُ مِنْ بَوْلِهِ، وَكَانَ الْآخَرُ يَمْشِي بِالنَّمِيمَةِ" وَفِي رِوَايَةِ مُسْلِمٍ: "لَا يَسْتَنْزِهُ مِنْ بَوْلِهِ"
+      <span><b>Fassara:</b> Daga Ibn Abbas (R.A) ya ce: Annabi ﷺ ya wuce ta wani gona a Madina sai ya ji muryar mutane biyu ana musu azaba a kabarinsu, sai Manzon Allah ﷺ yace: "Ana musu azaba, kuma ba a musu azaba a cikin babban abu ba (a ganin mutane), kayi, dayan su bai kasance yana suturtuwa daga fitsarinsa ba, dayan kuma yana tafiya da annamimanci."<br>A ruwayar Muslim: "Baya kiyayewa daga fitsarinsa."</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Bukhari 216</span>
+      <span class="badge">Muslim 292</span>
+      <span class="badge">Hadisin Ibn Abbas</span>
+    </div>
   </div>
 
   <div class="card">
-    <h3>3. Wanke Hannu</h3>
+    <h3> Ladubban Biyan Bukata (Qada'ul Haja)</h3>
+    <p>Akwai ladubba da ake bi yayin biyan buƙata kamar yadda yake a cikin Sunnah:</p>
+    <div class="hadith-box">
+      عَنْ سَلْمَانَ قَالَ: قِيلَ لَهُ: لَقَدْ عَلَّمَكُمْ نَبِيُّكُمْ كُلَّ شَيْءٍ حَتَّى الْخِرَاءَةَ؟ قَالَ: أَجَلْ، لَقَدْ نَهَانَا أَنْ نَسْتَقْبِلَ الْقِبْلَةَ لِغَائِطٍ أَوْ بَوْلٍ، وَأَنْ لَا نَسْتَنْجِيَ بِالْيَمِينِ، وَأَنْ لَا يَسْتَنْجِيَ أَحَدُنَا بِأَقَلَّ مِنْ ثَلَاثَةِ أَحْجَارٍ، أَوْ نَسْتَنْجِيَ بِرَجِيعٍ أَوْ عَظْمٍ
+      <span><b>Fassara:</b> Daga Salman (R.A) aka ce masa: Lallai Annabinku ya koya muku komai har da yadda ake yin bayan gida? Yace: Eh, lallai ya hane mu mu fuskanci AlQibla don kashi ko fitsari, kuma kada mu yi istinji da hannun dama, kuma kada ɗayan mu yayi istinja'i (Tsarkin Dutse) da kasa da duwatsu uku, ko ya yi istinji da ƙashi ko da kashin na dabbobi.</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Muslim 262</span>
+      <span class="badge">Abu Dawud 7 - Sahih</span>
+      <span class="badge">Hadisin Salman Al-Farisi</span>
+    </div>
+    
+    <div class="note-box"><b>Abin Lura:</b> Ba'a fuskantar AlQibla ko juyawa mata baya yayin biyan bukata a fili. A bandaki na zamani da ke da bango babu laifi, amma idan da yadda za'a kaucewa hakan, kaucewar yafi. Kuma ba'a yin tsarki da ƙashi, da takarda mai daraja, da hannun dama.</div>
+  </div>
+
+  <div class="card">
+    <h3>1b. Tsarkin Bahaya (Kashi) - Istinja'i</h3>
+    <p>Anaso mutum bayan ya kammala bahaya ya samu tishu ko wani abu mai kyau ya goge duburarsa, sannan ya yasa ruwa mai kyau ya yi tsarki. Zai yi amfani da babban yatsansa wajen wankewa, ba yasa yatsunsa duka ba - yana yi yana zuba ruwa yana wankewa. Bayan ya gama sai ya goga hannunsa cikin ƙasa ya wanke hannunsa ko kuma yasa sabulu ko omo ya wanke hannunsa.<br>Idan bai samu ruwa ba zai iya amfani da duwatsu uku kamar yadda Hadisin Nana Aisha ya nuna.</p>
+    <div class="dark-box">
+      <b>Tsari Mai Kyau:</b> Zai fara yin tsarkin fitsari kafin na bahaya domin ya kare kansa daga cuta. Sannan ya wanke hannunsa da sabulu bayan ya gama.
+    </div>
+    <div class="hadith-box">
+      عَنْ عَائِشَةَ أَنَّ رَسُولَ اللَّهِ ﷺ قَالَ: "إِذَا ذَهَبَ أَحَدُكُمْ إِلَى الْغَائِطِ فَلْيَذْهَبْ مَعَهُ بِثَلَاثَةِ أَحْجَارٍ يَسْتَطِيبُ بِهِنَّ، فَإِنَّهَا تُجْزِئُ عَنْهُ"
+      <span><b>Fassara:</b> Idan ɗayan ku ya tafi bayan gida to ya tafi da duwatsu uku ya tsarkaka da su, domin sun isar masa.<br><b>Ma'ana:</b> Istinja'i ba wajibi bane sai da ruwa, duwatsu uku sun isar, amma ruwa yafi kamala.</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Abu Dawud 40 - Hasan</span>
+      <span class="badge">Nasa'i 44</span>
+      <span class="badge">Ahmad 6/133</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>2. Aswaki - Yin Siwaka</h3>
+    <p>Na daya daga cikin abubuwanda ake so mutum ya yi kafin ya yi alwala domin ya gusar da datti ko sauran abinci dayake maƙalewa a tsakanin hakori, to idan ya zo alwala kuskurewa kawai zaiyi.</p>
+
+    <div class="hadith-box">
+      عَنْ عَائِشَةَ رَضِيَ اللَّهُ عَنْهَا أَنَّ النَّبِيَّ ﷺ قَالَ: "السِّوَاكُ مَطْهَرَةٌ لِلْفَمِ مَرْضَاةٌ لِلرَّبِّ"
+      <span><b>Fassara:</b> Siwaka tsarkakewa ne ga baki, yardarwa ne ga Ubangiji.</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Ahmad 6/47</span>
+      <span class="badge">Nasa'i 1/10 - Hasan</span>
+      <span class="badge">Bukhari Ta'aliqan - Ingantacce</span>
+    </div>
+
+    <div class="hadith-box">
+      عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللَّهُ عَنْهُ أَنَّ رَسُولَ اللَّهِ ﷺ قَالَ: "لَوْلَا أَنْ أَشُقَّ عَلَى أُمَّتِي لَأَمَرْتُهُمْ بِالسِّوَاكِ عِنْدَ كُلِّ صَلَاةٍ"
+      <span><b>Fassara:</b> Da ba don zan yi wahala ga al'ummata ba da na umarce su da Siwaka a wajen kowace sallah.<br><b>Fa'ida:</b> Wannan yana nuna Sunnace Mai Karfi - Kusan wajibi - Saboda Annabi ﷺ ya so ya wajabta ta.</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Bukhari 887</span>
+      <span class="badge">Muslim 252</span>
+      <span class="badge">Abu Dawud 46</span>
+      <span class="badge">Tirmizi 22</span>
+      <span class="badge">Nasa'i 1/12</span>
+      <span class="badge">Ibn Maja 287</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>3. Niyya - Mizanin Ayyuka</h3>
+    <p>Na daya daga cikin abubuwanda wajibine Musulmi ya yita yayin alwala - Kowace ibadah.</p>
+
+    <div class="hadith-box">
+      إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى
+      <span><b>Fassara:</b> Lallai ayyuka da niyyoyi ake yi musu hukunci, kuma kowane mutum yana da abinda ya yi niyya.</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Bukhari 1</span>
+      <span class="badge">Muslim 1907</span>
+      <span class="badge">Hadisin Umar bin Khattab</span>
+    </div>
+
+    <h4>Fa'ida Daga Sheikh Ibn Uthaymeen</h4>
+    <div class="dark-box">
+      Sheikh Muhammad Salih Uthaymeen yace: Fadin sa "إنما الأعمال بالنيات" Wannan Jumlar da wace take gabanta Mizanine ga dukkan aiki, sai dai shi mizanine na Baɗini (zuciya).<br><br>
+      Kuma fadinsa (S.A.W) cikin abinda Bukhari da Muslim suka ruwaito daga Nana Aisha (R.A):<br>
+      "مَنْ عَمِلَ عَمَلًا لَيْسَ عَلَيْهِ أَمْرُنَا فَهُوَ رَدٌّ"<br>
+      Duk wanda ya aikata wani aiki wanda babu umarninmu a kansa to abin mayarwa ne (ba a karba). Mizani ne na Ayyukan Zahiri.
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Muslim 1718</span>
+      <span class="badge">Bukhari Ta'aliqan</span>
+      <span class="badge">Hadisin Aisha</span>
+    </div>
+
+    <h4>Abin Lura Anan - Mizanin Zahiri dana Baɗini</h4>
+    <div class="dark-box">
+      Kenan dukkan aikin da zakayi da yazo mana yana da dalili a AlQur'ani ko Sunnar Annabi (S.A.W) ko Ijma'in malamai, Wannan sai ya zama Mizanin Zahiri, Na auna dukkan aikin ibadah da zakayi.<br>
+      Domin dukkan aikin da zakayi matukar bai zo daga dayan wa'ƴannan ba to aikin banza ka keyi domin babu ruwan Allah (S.W.T) dashi, don bashi yasa ka ba, duk yadda yakai ga kyau a wajanka saboda hadisin Nana Aisha.<br>
+      <b>Niyyarka kuma saita zamammaka Mizaninka na Baɗini:</b> Idan aikinka ya tsallake mizanin farko na zahiri, ta hanyar tsarkake zuciyarka ga Allah (S.W.T) kaɗai domin samun sakamako ranar alqiyama - Wannan shine abinda Allah yayi umarni a cikin wannan ayar:
+   </div>
+   <div class="ayah-box">
+      وَمَا أُمِرُوا إِلَّا لِيَعْبُدُوا اللَّهَ مُخْلِصِينَ لَهُ الدِّينَ
+      <br><span>"Kuma ba a umarce su ba face da su bauta wa Allah suna masu tsarkake masa addini."<br><b>Ma'ana:</b> Kuna masu tsarkake Ayyuka. </span>
+   </div>
+    <span class="badge">Suratul Bayyina: 5</span>
+  </div>
+
+  <div class="card">
+    <h3> Nau'in Niyya da Siffarta</h3>
+    <h4>Niyya Tana da Abu Uku:</h4>
+    <div class="dark-box">
+      ① <b>Niyyar Ibadar daza kayi:</b> Komar alwala ko Sallah ko Azumi dss<br>
+      ② <b>Niyyar ta kasance zakayita don Allah:</b> Ikhlasi<br>
+      ③ <b>Niyyar zaka yitane don bin Umarnin Allah (S.W.T):</b> Ittiba'i
+    </div>
+    <div class="note-box">Duba Sharhin Riyadus Salihina na Ibn Uthaymeen Mujalladi na daya Ƙarƙashin Hadisi na daya</div>
+
+    <h4>Yadda Ake Niyya - Ba'a Furta da Baki</h4>
+    <div class="danger-box">
+      <b>Bid'a Ce Furta Niyya da Baki:</b> Sannan Niyya a zuciya akeyinta ba'a furta ta da baki ba domin furta a baki Bid'a ce. Kamar yadda zaka kaga wasu suke yi idan sallah zasuyi sai kaji sunce: "Allahumma inni nawaitu Salatal Maghrib" Idan Sallar Magriba zaiyi kenan, haka nan idan duk sallar dazaiyi sai ya ambaceta, Idan a Jami'i zaiyi ko kara'i zaiyi.<br> Haka idan azumi ne yazo haka zai kulla niyyarsa da baki sabanin zuciya - Dukkan kalar irin wannan Niyyar Bid'a ce domin Annabi (S.A.W) bai taba furta niyya ba.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>4. Basmala - Yin Bismillah</h3>
+    <p>Yin Bismillah yayin fara alwala da lafazin:</p>
+    <div class="ayah-box">
+      بِسْمِ اللَّهِ
+      <span><b>Siffa:</b> Kace Bismillah kafin ka fara alwala - Duba Hisnul Muslim shafi na 19 - Hadisi Hasan - Abu Dawud 101, Tirmizi 25</span>
+    </div>
+    <div class="danger-box">Ba'a yi bismillah har karshe domin ba haka Annabi ﷺ yayi ba.</div>
+  
+    <div class="hadith-box">
+      لَا وُضُوءَ لِمَنْ لَمْ يَذْكُرِ اسْمَ اللَّهِ عَلَيْهِ
+      <span><b>Fassara:</b> Babu alwala ga wanda bai ambaci sunan Allah a kanta ba.<br>Wannan hadisin yana nuna wajabcin ko sunnancin Basmala a alwala - Dangane da sabanin malamai a ingancinsa.</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Abu Dawud 101 - Hasan</span>
+      <span class="badge">Tirmizi 25 - Hasan</span>
+      <span class="badge">Ibn Majah 397, 398, 399</span>
+      <span class="badge">Ahmad 2/418 No. 11370</span>
+      <span class="badge">Hakim 1/146 - Sahih</span>
+      <span class="badge">Albani - Sahihul Jami' 7444 - Hasan</span>
+      <span class="badge">Hadisin Abu Huraira & Sa'id bin Zaid</span>
+    </div>
+  </div>
+
+<header class="alwala-header">
+  <div class="header-text"><h1>YADDA AKE ALWALA</h1></div>
+</header>
+    <div class="card">
+    <h3>Hadisin Uthman - Cikakkiyar Siffar Alwala ta Annabi ﷺ</h3>
+    <div class="hadith-box">
+      عَنْ حُمْرَانَ مَوْلَى عُثْمَانَ قَالَ: أَتَيْتُ عُثْمَانَ بْنَ عَفَّانَ بِوَضُوءٍ فَتَوَضَّأَ فَغَسَلَ كَفَّيْهِ ثَلَاثًا، ثُمَّ مَضْمَضَ وَاسْتَنْثَرَ ثَلَاثًا، ثُمَّ غَسَلَ وَجْهَهُ ثَلَاثًا، ثُمَّ غَسَلَ يَدَهُ الْيُمْنَى إِلَى الْمِرْفَقِ ثَلَاثًا، ثُمَّ الْيُسْرَى مِثْلَ ذَلِكَ، ثُمَّ مَسَحَ بِرَأْسِهِ، ثُمَّ غَسَلَ رِجْلَهُ الْيُمْنَى إِلَى الْكَعْبَيْنِ ثَلَاثًا، ثُمَّ الْيُسْرَى مِثْلَ ذَلِكَ، ثُمَّ قَالَ: رَأَيْتُ رَسُولَ اللَّهِ ﷺ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا، ثُمَّ قَالَ: "مَنْ تَوَضَّأَ نَحْوَ وُضُوئِي هَذَا ثُمَّ صَلَّى رَكْعَتَيْنِ لَا يُحَدِّثُ فِيهِمَا نَفْسَهُ غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ"
+      <span><b>Fassara:</b> Daga Humran bawon Uthman yace: Na kawo wa Uthman bin Affan ruwan alwala sai yayi alwala: Ya wanke tafin hannunsa sau 3, sannan ya kuskure baki ya shaƙa ruwa sau 3, sannan ya wanke fuskarsa sau 3, sannan ya wanke hannun damansa zuwa gwiwar hannu sau 3, sannan hagunsa haka, sannan ya shafi kansa, sannan ya wanke kafar damansa zuwa idon sawu sau 3, sannan hagunsa haka, sannan yace: Na ga Manzon Allah ﷺ yayi alwala kamar alwalar nan tawa, sannan yace: "Duk wanda yayi alwala kamar alwalar nan tawa sannan ya yi sallah raka'a biyu bai yi magana da kansa ba a cikinsu, za a gafarta masa abinda ya gabata na zunubinsa."</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Bukhari 159</span>
+      <span class="badge">Bukhari 160 - Cikakke</span>
+      <span class="badge">Muslim 226</span>
+      <span class="badge">Abu Dawud 106</span>
+      <span class="badge">Nasa'i 97</span>
+      <span class="badge">Hadisin Uthman bin Affan</span>
+    </div>
+    </div>
+  <div class="card">
+    <h3>1. Wanke Hannu</h3>
     <p>Wanke hannu tare da tsatstsefe ƴan yatsunka sau 3, zaka fara da hannun dama sannan hannun hagu.</p>
+    <div class="hadith-box">
+      كَانَ عُثْمَانُ إِذَا تَوَضَّأَ غَسَلَ كَفَّيْهِ ثَلَاثًا
+      <span><b>Fassara:</b> Uthman (R.A) idan yayi alwala yana wanke tafin hannunsa sau uku - Siffar alwala ta Uthman ita ce mafi shahara a Sunnah.</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Bukhari 159</span>
+      <span class="badge">Muslim 226</span>
+      <span class="badge">Hadisin Uthman bin Affan</span>
+    </div>
   </div>
 
   <div class="card">
-    <h3>4. Kuskurar Baki / Shaƙa Ruwa</h3>
-    <p>Sai ka kuskure bakinka tare da shaƙa ruwa a hancinka ka face sau 3, Shine ka zuba ruwa a bakinka ka kurkura Sannan sai ka zubar, Sannan ka shaƙa ragowar ruwan dake hannunka ka face.</p>
-    <div class="dark-box" style="background:#fef2f2; color:#991b1b; border-left:4px solid #c53030;">Abin lura: Bazaka sanya ɗan yatsanka ba a bakinka yayin kuskurar bakin, Wannan kuskure ne da ya shahara a kasar Hausa.</div>
+    <h3>2. Kuskurar Baki / Shaƙa Ruwa</h3>
+    <p>Sai ka kuskure bakinka tare da shaƙa ruwa a hancinka ka fitar sau 3, Shine ka zuba ruwa a bakinka ka kurkura Sannan sai ka zubar, Sannan ka shaƙa ragowar ruwan dake hannunka ka fitar.</p>
+    <div class="hadith-box">
+      إِذَا تَوَضَّأَ أَحَدُكُمْ فَلْيَجْعَلْ فِي أَنْفِهِ مَاءً ثُمَّ لِيَسْتَنْثِرْ
+      <span><b>Fassara:</b> Idan dayan ku yayi alwala to ya sanya ruwa a hancinsa sannan ya fitar da shi (istinthar).<br>Hadisin Abu Huraira - Bukhari da Muslim</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Bukhari 162</span>
+      <span class="badge">Muslim 237</span>
+      <span class="badge">Abu Dawud 140</span>
+    </div>
+    <div class="hadith-box">
+    تَمَضْمَضَ وَاسْتَنْشَقَ مِنْ كَفٍّ وَاحِدَةٍ، فَفَعَلَ ذَلِكَ ثَلَاثًا
+    <span><b>Fassara:</b> Ya kuskure baki ya shaƙa ruwa a hanci daga tafin hannu guda daya, ya yi haka sau uku.</span>
+  </div>
+  <div style="display:flex; flex-wrap:wrap; gap:6px;">
+    <span class="badge">Bukhari 191 - Lafazin</span>
+    <span class="badge">Muslim 235 - Hadisin Abdullahi bin Zaid</span>
+    <span class="badge">Abu Dawud 100</span>
+  </div>
+    <div class="danger-box"> Ba'a sanya ɗanyatsa a baki yayin kuskurar baki Wannan kuskure ne, domin cewa akayi ka kuskure bakin ka <b>ba ka wanke ba</b>, Sanya Ɗanyatsa kuwa wankewa kenan, shiyasa akeso kayi Aswaki kafin fara alwala domin da kazo wajen kuskurar baki kuskurewa kawai zakayi, Sai dai kuma ba haka ake a ƙasar hausa ba, duk da hakan shine dacewa da Sunnah kuma shine dai-dai.<br><br> Sannan ba'a ɗebo wani ruwan domin shaƙa ruwa a hanci, da raguwar ruwan da ka guntsa don kuskurar baki da shi zakayi shaƙar hanci kamar yadda hadisin sama ya nuna.</div>
   </div>
 
   <div class="card">
-    <h3>5. Wanke Fuska</h3>
+    <h3>3. Wanke Fuska</h3>
     <p>Sai wanke Fuska tin daga goshi matsirar gashi har zuwa gefen kunnuwanka na dama zuwa na hagu, loko-lokon idanuwanka duka, har zuwa haɓarka kana mai tsatstsefe gemunka idan mai yawa ne, zakayi haka sau 3.</p>
+    <div class="hadith-box">
+      ثُمَّ غَسَلَ وَجْهَهُ ثَلَاثًا
+      <span>Sannan ya wanke fuskarsa sau uku - Daga cikin Siffar Alwala ta Uthman - Bukhari da Muslim sun ruwaito.</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Bukhari 159</span>
+      <span class="badge">Muslim 226</span>
+      <span class="badge">Hadisin Uthman</span>
+    </div>
   </div>
 
   <div class="card">
-    <h3>6. Wanke Hannu (Zira'i)</h3>
+    <h3>4. Wanke Hannu (Zira'i)</h3>
     <p>Sannan sai ka wanke hannunka zuwa gwiwar hannu, kana mai dirza gwiwowin hannuwanka don ko'ina ya samu ruwan, zaka yi hakan sau 3, Zaka fara da hannun dama sannan hagu.</p>
+    <div class="hadith-box">
+      ثُمَّ غَسَلَ يَدَهُ الْيُمْنَى إِلَى الْمِرْفَقِ ثَلَاثًا، ثُمَّ الْيُسْرَى مِثْلَ ذَلِكَ
+      <span>Sannan ya wanke hannun dama zuwa gwiwar hannu sau uku, sannan hagu kamar haka.</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Bukhari 159</span>
+      <span class="badge">Muslim 226</span>
+      <span class="badge">Abu Dawud 106</span>
+    </div>
+     <div class="danger-box">A kwai kuskure da matasa keyi a nan sai suje tela ya matse musu hannun riga ta yadda dantsen hannun su duka ba zai fito ta hannun rigar ba, sai su wanke iyaka inda ya fito, to wannan kuskure ne babba domin lam'a ake bari a wajan, wanda hakan na iya jawo rashin karɓuwar sallarka ko kuma hakan ya jawo maka Azaba kamar yadda hadisi ya nuna, Allah ka tsare.  </div>
   </div>
+  
 
   <div class="card">
-    <h3>7. Shafar Kai / Kunnuwa</h3>
+    <h3>5. Shafar Kai / Kunnuwa</h3>
     <p>Sai shafar kai tare da kunnuwanka, Yadda zakayi Zaka fara shafar tun daga matsirar gashin kanka zuwa ƙeyarka, Kunnuwa kuma zaka sanya ɗan yatsanka ɗan manuniya a cikin kunnuwanka, Sai ka bibbiyo lokunan cikin kunnenka har ka fito waje, Sannan ka sanya babban ɗan yatsanka ka shafo bayan kunnenka dashi.</p>
+    <div class="hadith-box">
+      ثُمَّ مَسَحَ بِرَأْسِهِ فَأَقْبَلَ بِيَدَيْهِ وَأَدْبَرَ
+      <span>Sannan ya shafi kansa da hannayensa - Ya fara da goshi ya kai zuwa wuya sannan ya dawo - Siffa mafi inganci ta shafar kai.</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Bukhari 185</span>
+      <span class="badge">Muslim 235</span>
+      <span class="badge">Hadisin Abdullahi bin Zaid</span>
+    </div>
+    <div class="hadith-box">
+      الْأُذُنَانِ مِنَ الرَّأْسِ
+      <span>Kunnuwa biyu suna daga cikin kai - Ma'ana ana shafarsu da shafar kai ne, ba wanke su ake ba</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Abu Dawud 134 - Hasan</span>
+      <span class="badge">Ibn Majah 444</span>
+      <span class="badge">Albani – Silsilatus Sahihah 36 – Sahih</span>
+    </div>
+    <div class="danger-box">Ba'a ɗebo wani ruwan don shafar kunnuwa, da ruwan da aka shafi kai dashi ake shafar kunnuwa ciki da waje kamar yadda akayi bayani a sama.</div>
   </div>
 
   <div class="card">
-    <h3>8. Wanke Ƙafafuwa</h3>
+    <h3>6. Wanke Ƙafafuwa</h3>
     <p>Sai ka wanke ƙafafuwanka zuwa idon sawu kana mai farawa da ƙafar dama sannan kafar hagu.</p>
+    <div class="hadith-box">
+      وَيْلٌ لِلْأَعْقَابِ مِنَ النَّارِ
+      <span><b>Fassara:</b> Bone ya tabbata ga dugadugan kafafu daga wuta - Annabi ﷺ ya fada haka lokacin da yaga wasu basa isar da ruwa zuwa idon sawu - Bukhari da Muslim - Wajibi ne a isar da ruwa ko'ina zuwa idon sawu.</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Bukhari 60</span>
+      <span class="badge">Bukhari 165</span>
+      <span class="badge">Muslim 241</span>
+      <span class="badge">Hadisin Abdullahi bin Amr</span>
+    </div>
   </div>
 
   <div class="card">
-    <h3>9. Addu'a Bayan Alwala</h3>
+    <h3> Addu'a Bayan Alwala</h3>
     <p>Sai ka karanta Addu'ar gama Alwala sai kace:</p>
-    <div class="ayah-box" dir="rtl" lang="ar" style="font-size:22px;">
+    <div class="ayah-box" dir="rtl" lang="ar" style="font-size:22px; text-align:center;">
       أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ.<br>
       اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ، وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ.
     </div>
-    <p style="margin-top:10px;"><b>Ma’ana:</b> “Na shaida babu abin bautawa da gaskiya sai Allah Shi kaɗai, ba Shi da abokin tarayya. Kuma na shaida cewa Muhammadu bawansa ne kuma Manzonsa ne. Ya Allah! Ka sanya ni cikin masu yawan tuba, kuma Ka sanya ni cikin masu tsarkake kansu.”</p>
-  </div>
+    <div class="hadith-box">
+      مَنْ تَوَضَّأَ فَأَحْسَنَ الْوُضُوءَ ثُمَّ قَالَ: أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ، اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ، فُتِحَتْ لَهُ أَبْوَابُ الْجَنَّةِ الثَّمَانِيَةُ يَدْخُلُ مِنْ أَيِّهَا شَاءَ
+      <span><b>Fassara:</b> Duk wanda ya yi alwala ya kyautata alwala sannan yace wannan addu'ar, za a bude masa kofofin Aljanna guda takwas ya shiga ta inda yaso - Tirmizi 55 Sahih - Albani</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <span class="badge">Muslim 234</span>
+      <span class="badge">Tirmizi 55</span>
+      <span class="badge">Albani Sahihul Jami' 6046</span>
+      <span class="badge">Hadisin Umar & Uqba bin Amir</span>
+    </div>
+    <div class="danger-box"><b>Jan Hankali:</b> Ba'a ɗaga ɗan yatsa yayin addu'a bayan idar da alwala ko ɗaga ido sama wannan baya cikin sunnah.</div>
+</div>
 
+</div>
+  
   <div class="bottom-nav">
     <a href="index.html" class="btn-home">← Koma Shafin Gida</a>
     <a href="#top" class="btn-top">↑ Koma Sama</a>
