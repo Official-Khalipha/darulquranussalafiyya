@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Littattafan Musulunci - Darul Qur'anus Salafiyya</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box; margin:0; padding:0; font-family:'Inter',sans-serif}
+body{background:#f3f6f1; color:#222; max-width:600px; margin:auto}
+.head{background:#0f2e1c; color:white; padding:12px; border-radius:0 0 20px 20px}
+.head-top{display:flex; align-items:center; justify-content:space-between}
+.logo{width:80px; height:80px; border-radius:50%; background:transparent; object-fit:contain}
+.head-center{text-align:center; flex:1}
+.sunan h1{font-size:16px; font-weight:800; line-height:1.1}
+.taken h2{font-size:12px; font-weight:400; color:#d4f5d4; font-style:italic}
+.head-buttons{display:flex; gap:6px; flex-wrap:wrap; justify-content:center; margin-top:12px}
+.head-buttons a{background:rgba(255,255,255,0.15); color:white; padding:6px 12px; border-radius:20px; text-decoration:none; font-size:12px; font-weight:600}
+.header{text-align:center; padding:18px 15px 10px 15px}
+.header h2{font-size:18px; color:#0f5d2e}
+.header p{font-size:13px; color:#666; margin-top:4px}
+.card{background:white; border-radius:18px; padding:16px; margin:14px; box-shadow:0 4px 15px rgba(0,0,0,0.05)}
+.search-box{width:100%; padding:13px 15px; border-radius:25px; border:1.5px solid #dde6db; outline:none}
+.search-box:focus{border-color:#1a5c36}
+.filter-tabs{display:flex; gap:8px; overflow-x:auto; padding:8px 0; scrollbar-width:none}
+.filter-tabs.main-tabs{padding-top:12px; padding-bottom:12px; border-bottom:1.5px solid #e8f5e9; margin-bottom:8px}
+.f-tab{padding:8px 18px; border-radius:20px; border:1.5px solid #cde3cb; background:white; cursor:pointer; font-size:13px; font-weight:600; white-space:nowrap; color:#1a5c36; flex-shrink:0}
+.f-tab.active{background:#1a5c36; color:white; border-color:#1a5c36}
+.main-tabs .f-tab{flex:1; text-align:center; font-size:14px; font-weight:800; padding:11px}
+.main-tabs .f-tab.active{background:#0f2e1c; border-color:#0f2e1c}
+.book-card{display:flex; gap:12px; background:white; border-radius:15px; padding:14px; margin-bottom:12px; box-shadow:0 3px 10px rgba(0,0,0,0.05); border-left:5px solid #d4af37}
+.book-icon{width:55px; height:72px; background:#e8f5e9; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:30px; flex-shrink:0}
+.book-info{flex:1}
+.book-info h4{font-size:14px; color:#1a5c36; line-height:1.3; font-weight:700}
+.book-info small{color:#777; font-size:11px; display:block; margin:4px 0 8px 0}
+.book-btns{display:flex; gap:8px}
+.btn-read,.btn-down{flex:1; padding:9px; border-radius:10px; border:0; font-weight:700; font-size:12px; cursor:pointer; text-align:center; text-decoration:none!important}
+.btn-read{background:#1a5c36; color:white}
+.btn-down{background:#fff8e1; color:#8d6e00; border:1px solid #ffe082}
+.footer-modern{background:#0f2e1c; color:white; text-align:center; padding:20px; margin-top:20px; border-radius:20px 20px 0 0}
+.btn-mujallad-toggle{margin-top:10px; width:100%; padding:9px; border:1.5px dashed #1a5c36; background:#f0fdf4; color:#1a5c36; border-radius:10px; cursor:pointer; font-weight:700; font-size:12px;}
+.mujallad-list{ display:none; margin-top:12px; border-top:1px solid #eee; padding-top:10px; }
+.mujallad-list.open{ display:block; }
+.mujallad-inner{ display:flex; flex-direction:column; gap:6px; max-height:320px; overflow-y:auto; }
+.muj-item{ display:flex; justify-content:space-between; align-items:center; padding:8px 10px; background:#fafafa; border-radius:8px; border:1px solid #f0f0f0; }
+.muj-item.full-set{ background:#eef2ff; border:1px solid #c7d2fe; }
+.muj-btns{ display:flex; gap:6px; }
+.no-result{display:none; text-align:center; padding:25px; color:#888; font-size:13px; background:white; border-radius:15px; margin-top:10px}
+.bottom-nav{text-align:center; padding:25px 15px; border-top:2px solid #e8e0c0; margin-top:25px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap;}
+.btn-home{background:#0f5d2e; color:#fff; padding:10px 22px; border-radius:25px; text-decoration:none; font-size:14px; font-weight:bold;margin:0;}
+</style>
+</head>
+<body>
+<div class="head">
+  <div class="head-top">
+    <img src="logo 1.png" class="logo" alt="Logo">
+    <div class="head-center">
+      <div class="sunan"><h1>DARUL QUR'ANUS SALAFIYYA</h1></div>
+      <div class="taken"><h2>Littattafan Musulunci</h2></div>
+    </div>
+    <img src="logo 1.png" class="logo" alt="Logo">
+  </div>
+  <div class="head-buttons">
+    <a href="index.html">🏠 Gida</a>
+    <a href="tsarki.html">✨ Hausa</a>
+    <a href="sallah.html">🕌 English</a>
+  </div>
+</div>
+<div class="header">
+<h2>📚 LITTATTAFAN MUSULINCI</h2>
+<p>Karanta ko Sauke Littattafai na Addini - PDF</p>
+</div>
+<div class="card">
+<input type="text" id="searchBook" onkeyup="filterBooks()" class="search-box" placeholder="🔍 Nemo littafi... misali: Bukhari, Fathul Bari...">
+
+<div class="filter-tabs main-tabs">
+  <button class="f-tab active" id="btn-dai" onclick="showMain('dai', this)">📕 Littattafai</button>
+  <button class="f-tab" id="btn-muj" onclick="showMain('mujallad', this)">📚 Mujalladai</button>
+</div>
+
+<div class="filter-tabs">
+  <button class="f-tab" onclick="setCat('tafsiri',this)">Tafseer</button>
+  <button class="f-tab" onclick="setCat('aqida',this)">Aqida</button>
+  <button class="f-tab" onclick="setCat('fiqhu',this)">Fiqhu</button>
+  <button class="f-tab" onclick="setCat('hadisi',this)">Hadith</button>
+</div>
+
+<div id="singleSection">
+  <div class="book-card" data-cat="fiqhu" data-name="sifatus salatin nabiyyi sallah">
+    <div class="book-icon">📘</div>
+    <div class="book-info">
+      <h4>Sifatus Salatin Nabiyyi ﷺ</h4>
+      <small>Marubuci: Sheikh Nasiruddeen Albani | Fiqhu</small>
+        <div class="book-btns">
+            <a href="https://archive.org/details/sifatus-salah" target="_blank" class="btn-read">📖 Karanta</a>
+            <a href="https://archive.org/download/sifatus-salah/sifatus-salah.pdf" target="_blank" class="btn-down">⬇️ Sauke</a>
+       </div>
+    </div>
+  </div>
+  
+  <div class="book-card" data-cat="aqida" data-name="kitabut tauheed tauhidi"><div class="book-icon">📙</div><div class="book-info"><h4>Kitabut Tauheed</h4><small>Marubuci: Muhammad bin Abdulwahhab | Aqida</small><div class="book-btns"><a href="https://archive.org/details/kitabut-tauheed" target="_blank" class="btn-read">📖 Karanta</a><a href="https://archive.org/download/kitabut-tauheed/kitabut-tauheed.pdf" download class="btn-down">⬇️ Sauke</a></div></div></div>
+  <div class="book-card" data-cat="fiqhu" data-name="riyadus salihin"><div class="book-icon">📕</div><div class="book-info"><h4>Riyadus Salihin</h4><small>Marubuci: Imam Nawawi | Fiqhu</small><div class="book-btns"><a href="https://archive.org/details/riyadus-salihin" target="_blank" class="btn-read">📖 Karanta</a><a href="https://archive.org/download/riyadus-salihin/riyadus-salihin.pdf" download class="btn-down">⬇️ Sauke</a></div></div></div>
+  <div class="book-card" data-cat="hadisi" data-name="sahih bukhari"><div class="book-icon">📘</div><div class="book-info"><h4>Sahihul Bukhari</h4><small>Marubuci: Muhammad bin Isma'il al-Bukhari</small><div class="book-btns"><a href="https://archive.org/details/sahih-bukhari" target="_blank" class="btn-read">📖 Karanta</a><a href="https://archive.org/download/sahih-bukhari/sahih-bukhari.pdf" download class="btn-down">⬇️ Sauke</a></div></div></div>
+  <div class="book-card" data-cat="hadisi" data-name="sahih muslim"><div class="book-icon">📕</div><div class="book-info"><h4>Sahih Muslim</h4><small>Marubuci: Muslim bin al-Hajjaj</small><div class="book-btns"><a href="https://archive.org/details/sahih-muslim" target="_blank" class="btn-read">📖 Karanta</a><a href="https://archive.org/download/sahih-muslim/sahih-muslim.pdf" download class="btn-down">⬇️ Sauke</a></div></div></div>
+  <div class="book-card" data-cat="hadisi" data-name="sunan abi dawud"><div class="book-icon">📗</div><div class="book-info"><h4>Sunan Abi Dawud</h4><small>Marubuci: Abu Dawud</small><div class="book-btns"><a href="https://archive.org/details/sunan-abi-dawud" target="_blank" class="btn-read">📖 Karanta</a><a href="https://archive.org/download/sunan-abi-dawud/sunan-abi-dawud.pdf" download class="btn-down">⬇️ Sauke</a></div></div></div>
+  <div class="book-card" data-cat="hadisi" data-name="jami tirmizi"><div class="book-icon">📙</div><div class="book-info"><h4>Jami' al-Tirmidhi</h4><small>Marubuci: al-Tirmidhi</small><div class="book-btns"><a href="https://archive.org/details/jami-tirmidhi" target="_blank" class="btn-read">📖 Karanta</a><a href="https://archive.org/download/jami-tirmidhi/jami-tirmidhi.pdf" download class="btn-down">⬇️ Sauke</a></div></div></div>
+  <div class="book-card" data-cat="hadisi" data-name="sunan ibn maja"><div class="book-icon">📘</div><div class="book-info"><h4>Sunan Ibn Majah</h4><small>Marubuci: Ibn Majah</small><div class="book-btns"><a href="https://archive.org/details/sunan-ibn-majah" target="_blank" class="btn-read">📖 Karanta</a><a href="https://archive.org/download/sunan-ibn-majah/sunan-ibn-majah.pdf" download class="btn-down">⬇️ Sauke</a></div></div></div>
+  <div class="book-card" data-cat="hadisi" data-name="sunan nasai"><div class="book-icon">📕</div><div class="book-info"><h4>Sunan al-Nasa'i</h4><small>Marubuci: al-Nasa'i</small><div class="book-btns"><a href="https://archive.org/details/sunan-nasai" target="_blank" class="btn-read">📖 Karanta</a><a href="https://archive.org/download/sunan-nasai/sunan-nasai.pdf" download class="btn-down">⬇️ Sauke</a></div></div></div>
+  <div class="book-card" data-cat="tafsiri" data-name="tafsir jalalain"><div class="book-icon">📗</div><div class="book-info"><h4>Tafsir al-Jalalayn</h4><small>Marubuci: Jalaluddeen al-Mahalli & al-Suyuti</small><div class="book-btns"><a href="https://archive.org/details/tafsir-jalalayn" target="_blank" class="btn-read">📖 Karanta</a><a href="https://archive.org/download/tafsir-jalalayn/tafsir-jalalayn.pdf" download class="btn-down">⬇️ Sauke</a></div></div></div>
+  <div class="book-card" data-cat="tafsiri" data-name="tafsir saadi"><div class="book-icon">📙</div><div class="book-info"><h4>Tafsir al-Sa'adi</h4><small>Marubuci: Abdurrahman al-Sa'adi</small><div class="book-btns"><a href="https://archive.org/details/tafsir-saadi" target="_blank" class="btn-read">📖 Karanta</a><a href="https://archive.org/download/tafsir-saadi/tafsir-saadi.pdf" download class="btn-down">⬇️ Sauke</a></div></div></div>
+</div>
+
+
+  <!–––––––––––––––––––––––––– Mujalladai ––––––––––––––––––––––––––!>
+<div id="mujalladSection" style="display:none;">
+  
+<div class="book-card" data-cat="hadisi" data-name="irwaul ghalil albani"><div class="book-icon">📚</div><div class="book-info"><h4>Irwa'ul Ghalil - Albani</h4><small>Marubuci: Al-Albani | 8 Mujalladi</small><button class="btn-mujallad-toggle" onclick="toggleMuj(this, 8, 'irwa')">▼ Duba Mujalladai (8)</button><div class="mujallad-list"><div class="mujallad-inner"></div></div></div></div>
+<div class="book-card" data-cat="tafsiri" data-name="tafsir tabari jami bayan"><div class="book-icon">📚</div><div class="book-info"><h4>Tafsir al-Tabari</h4><small>Marubuci: Imam Tabari | 26 Mujalladi | Tafsiri</small><button class="btn-mujallad-toggle" onclick="toggleMuj(this, 26, 'tafsir-tabari')">▼ Duba Mujalladai (26)</button><div class="mujallad-list"><div class="mujallad-inner"></div></div></div></div>
+<div class="book-card" data-cat="tafsiri" data-name="tafsir ibn kasir"><div class="book-icon">📚</div><div class="book-info"><h4>Tafsir Ibn Kathir</h4><small>Marubuci: Ibn Kathir | 8 Mujalladi</small><button class="btn-mujallad-toggle" onclick="toggleMuj(this, 8, 'tafsir-ibn-kathir')">▼ Duba Mujalladai (8)</button><div class="mujallad-list"><div class="mujallad-inner"></div></div></div></div>
+<div class="book-card" data-cat="tafsiri" data-name="tafsir qurtubi"><div class="book-icon">📚</div><div class="book-info"><h4>Tafsir al-Qurtubi</h4><small>Marubuci: Imam al-Qurtubi | 20 Mujalladi</small><button class="btn-mujallad-toggle" onclick="toggleMuj(this, 20, 'tafsir-qurtubi')">▼ Duba Mujalladai (20)</button><div class="mujallad-list"><div class="mujallad-inner"></div></div></div></div>
+<div class="book-card" data-cat="tafsiri" data-name="tafsir baghawi"><div class="book-icon">📚</div><div class="book-info"><h4>Tafsir al-Baghawi</h4><small>Marubuci: al-Baghawi | 8 Mujalladi</small><button class="btn-mujallad-toggle" onclick="toggleMuj(this, 8, 'tafsir-baghawi')">▼ Duba (8)</button><div class="mujallad-list"><div class="mujallad-inner"></div></div></div></div>
+<div class="book-card" data-cat="tafsiri" data-name="tafsir fath qadir shaukani"><div class="book-icon">📚</div><div class="book-info"><h4>Fath al-Qadir - Shaukani</h4><small>Marubuci: al-Shaukani | 5 Mujalladi</small><button class="btn-mujallad-toggle" onclick="toggleMuj(this, 5, 'fath-al-qadir')">▼ Duba (5)</button><div class="mujallad-list"><div class="mujallad-inner"></div></div></div></div>
+<div class="book-card" data-cat="tafsiri" data-name="tafsir dur manthur suyuti"><div class="book-icon">📚</div><div class="book-info"><h4>Al-Durr al-Manthur - Suyuti</h4><small>Marubuci: al-Suyuti | 15 Mujalladi</small><button class="btn-mujallad-toggle" onclick="toggleMuj(this, 15, 'durr-manthur')">▼ Duba (15)</button><div class="mujallad-list"><div class="mujallad-inner"></div></div></div></div>
+<div class="book-card" data-cat="tafsiri" data-name="tafsir razi"><div class="book-icon">📚</div><div class="book-info"><h4>Tafsir al-Razi - Mafatih al-Ghaib</h4><small style="color:red;">Gargadi: Cike da ilimin Kalam - 32 Mujalladi</small><button class="btn-mujallad-toggle" onclick="toggleMuj(this, 32, 'tafsir-razi')">▼ Duba (32)</button><div class="mujallad-list"><div class="mujallad-inner"></div></div></div></div>
+<div class="book-card" data-cat="aqida" data-name="qawl mufid tauheed"><div class="book-icon">📚</div><div class="book-info"><h4>Al-Qawlul Mufid Sharhin Kitabut Tauheed</h4><small>Marubuci: Ibn Uthaymin | Aqida | Mujalladi 2</small><button class="btn-mujallad-toggle" onclick="toggleMuj(this, 2, 'qawl-mufid')">▼ Duba Mujalladai (2)</button><div class="mujallad-list"><div class="mujallad-inner"></div></div></div></div>
+
+
+  
+</div> 
+
+  <div class="bottom-nav">
+    <a href="index.html" class="btn-home">← Koma Shafin Gida</a>
+    <a href="#top" class="btn-home">↑ Koma Saman Shafi</a>
+  </div>
+
+<div id="noResult" class="no-result">😔 Ba a samu littafin da ka nema ba</div>
+</div>
+<div class="footer-modern"><h3>Madrasatu Darul Qur'anus Salafiyya</h3><p style="font-size:12px; margin-top:8px">© 2026 Markazus Salafiyya – Ilimi Haske ne</p></div>
+
+<script>
+let currentCat='all';
+let mainMode='dai';
+
+function showMain(mode, el){
+  mainMode = mode;
+  document.querySelectorAll('.main-tabs .f-tab').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.filter-tabs:not(.main-tabs) .f-tab').forEach(b=>b.classList.remove('active'));
+  currentCat='all';
+  if(mode==='dai'){
+    document.getElementById('singleSection').style.display='block';
+    document.getElementById('mujalladSection').style.display='none';
+  } else {
+    document.getElementById('singleSection').style.display='none';
+    document.getElementById('mujalladSection').style.display='block';
+  }
+  filterBooks();
+}
+function setCat(cat,el){
+  currentCat=cat;
+  document.querySelectorAll('.filter-tabs:not(.main-tabs) .f-tab').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  filterBooks();
+}
+function filterBooks(){
+  let q=document.getElementById('searchBook').value.toLowerCase();
+  let visible=0;
+  let activeSection = mainMode==='dai' ? document.getElementById('singleSection') : document.getElementById('mujalladSection');
+  document.querySelectorAll('.book-card').forEach(card=>{
+    let name=card.getAttribute('data-name') || '';
+    let cat=card.getAttribute('data-cat') || '';
+    let matchSearch=name.includes(q);
+    let inActiveSection = activeSection.contains(card);
+    let matchCat = (currentCat==='all') || (cat===currentCat);
+    if(mainMode==='mujallad' && currentCat==='all'){ matchCat = true; }
+    if(mainMode==='dai' && currentCat==='all'){ matchCat = true; }
+    let show = inActiveSection && matchSearch && matchCat;
+    card.style.display= show ? 'flex' : 'none';
+    if(show) visible++;
+  });
+  document.getElementById('noResult').style.display = visible===0 ? 'block' : 'none';
+}
+function toggleMuj(btn, total, prefix){
+  const list = btn.nextElementSibling;
+  const inner = list.querySelector('.mujallad-inner');
+  const isOpen = list.classList.contains('open');
+  list.classList.toggle('open');
+  btn.textContent = isOpen ? `▼ Duba Mujalladai (${total})` : `▲ Boye Mujalladai`;
+  if(!isOpen && inner.children.length === 0){
+    let html = '';
+    for(let i=1; i<=total; i++){
+      html += `<div class="muj-item"><span>Muj. ${i}</span><div class="muj-btns"><a href="books/${prefix}-${i}.pdf" target="_blank" class="btn-read">📖 Karanta</a><a href="books/${prefix}-${i}.pdf" download class="btn-down">⬇️</a></div></div>`;
+    }
+    html += `<div class="muj-item full-set"><span>🔰 Cikakken Saiti</span><div class="muj-btns"><a href="books/${prefix}-full.pdf" target="_blank" class="btn-read">📖 Karanta</a><a href="books/${prefix}-full.pdf" download class="btn-down">⬇️ Duka</a></div></div>`;
+    inner.innerHTML = html;
+  }
+}
+</script>
+</body>
+</html>
