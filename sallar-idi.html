@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darasi - Sallar Idi Cikakke</title>
+<style>
+  :root{--green:#0d2e1a;--gold:#c9a227;--bg:#fdfcf5;}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Segoe UI', Tahoma, sans-serif; background:var(--bg); color:#222; line-height:1.85;}
+  .top-header{background:var(--green); color:#fff; padding:20px 15px; text-align:center; border-radius: 25px;}
+  .header-text h1{font-size:19px; margin:0 0 4px; color:#fff; font-weight:800; text-transform:uppercase;}
+  .header-text p{font-size:14px; color:#f5d76e; margin:0 0 15px;}
+  .btn-header{display:inline-block; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.35); color:#fff; padding:8px 22px; border-radius:25px; text-decoration:none; font-size:14px; font-weight:bold;}
+  .content{padding:10px; max-width:800px; margin:0 auto;}
+  .card{background:#fff; border:1px solid #e8e0c0; border-radius:12px; padding:16px; margin:14px 0; box-shadow:0 2px 6px rgba(0,0,0,0.04);}
+  .card h3{color:var(--green); font-size:18px; margin-bottom:10px; border-left:4px solid var(--gold); padding-left:10px;}
+  .ayah-box{background:#fdf6e3; border:1px solid #e7d9a3; border-right:4px solid var(--gold); padding:14px; border-radius:8px; margin:12px 0; text-align:center; direction:rtl; font-size:21px; line-height:2;}
+  .ayah-box span{font-size:13.5px; direction:ltr; display:block; margin-top:10px; text-align:left; color:#333; line-height:1.7; font-family:'Segoe UI', sans-serif;}
+  .dark-box{background:var(--green); color:#fff; padding:15px; border-radius:10px; margin:15px 0; font-size:14px;}
+  .note-box{background:#eef6ef; border-left:4px solid var(--green); padding:10px 12px; border-radius:6px; margin:12px 0; font-size:13px;}
+  .badge{display:inline-block; background:#eef6ef; color:var(--green); padding:3px 10px; border-radius:20px; font-size:11px; font-weight:bold; border:1px solid #c8e6c9; margin:2px;}
+  table{width:100%; border-collapse:collapse; margin:12px 0; font-size:14px;}
+  th,td{border:1px solid #e8e0c0; padding:8px; text-align:left;}
+  th{background:#eef6ef; color:var(--green);}
+  ol,ul{margin:8px 0 8px 20px;} li{margin:6px 0;}
+  .bottom-nav{text-align:center; padding:25px 15px; border-top:2px solid #e8e0c0; margin-top:25px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap;}
+  .btn-home{background:var(--green); color:#fff; padding:10px 22px; border-radius:25px; text-decoration:none; font-size:14px; font-weight:bold;}
+  .btn-top{background:#fff; color:var(--green); border:1.5px solid var(--green); padding:10px 22px; border-radius:25px; text-decoration:none; font-size:14px; font-weight:bold;}
+  .danger-box{ background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-right: 4px solid #dc2626; border-left: 1px solid #fecaca; border-top: 1px solid #fecaca; border-bottom: 1px solid #fecaca; border-radius: 12px; padding: 14px 16px; margin: 14px 0; color: #7f1d1d; font-size: 14px; line-height: 1.8; position: relative; box-shadow: 0 2px 8px rgba(220, 38, 38, 0.08);}
+  .danger-box::before{ content: "⚠️ Jan Hankali"; position: absolute; top: -10px; left: 14px; background: #dc2626; color: white; font-size: 11px; font-weight: bold; padding: 2px 10px;  border-radius: 20px;}
+  .danger-box b, .danger-box strong{ color: #991b1b;}
+  .hadith-box { background: linear-gradient(135deg, #f0fdf4 50%, #dcfce7 100%); border-right: 4px solid #16a34a; border-left: 1px solid #bbf7d0; border-top: 1px solid #bbf7d0; border-bottom: 1px solid #bbf7d0; border-radius: 12px; padding: 16px 18px; margin: 14px 0; font-family: 'Amiri', 'Traditional Arabic', serif; font-size: 1.15em; line-height: 2; color: #14532d; position: relative; box-shadow: 0 2px 8px rgba(22, 163, 74, 0.08);}
+  .hadith-box::before { content: "﷽ Hadisi"; position: absolute; top: -10px; right: 14px; background: #16a34a; color: white; font-size: 0.65em; font-family: sans-serif; padding: 2px 10px; border-radius: 20px; letter-spacing: 0.5px;}
+  .hadith-box span {display: block; margin-top: 10px;  font-family: sans-serif; font-size: 0.85em; line-height: 1.6;  color: #334159; border-top: 1px dashed #86efac; padding-top: 8px;}
+</style>
+</head>
+<body id="top">
+
+<header class="top-header">
+  <div class="header-text">
+    <h1>SALLAR IDI (صلاة العيد)</h1>
+    <p>Sallar Idi da Ladubban Ranar - Markazus Salafiyya</p>
+    <a href="sallah.html" class="btn-header">← Koma Shafin Baya</a>
+  </div>
+</header>
+
+<div class="content">
+
+  <div class="card">
+    <h3>1. Menene Sallar Idi?</h3>
+    <p>Sallar Idi tana da raka'a biyu, kuma ana yin ta ne bayan fitowar rana da ɗan lokaci, har zuwa kafin lokacin zawali.</p>
+    <p>Akwai <b>Idul-Fitr (Karamar Sallah)</b> da <b>Idul-Adha (Babbar Sallah)</b>, kuma tsarin sallar ɗaya ne.</p>
+  </div>
+
+  <div class="card">
+    <h3>2. Kafin a Tafi Sallar Idi</h3>
+    <h4 style="color:var(--green);">A. Idul-Fitr (Karamar Sallah)</h4>
+    <p>Ana so mutum ya ci wani abu kafin ya fita zuwa salla.</p>
+    <div class="hadith-box">
+    كَانَ لَا يَغْدُو يَوْمَ الْفِطْرِ حَتَّى يَأْكُلَ تَمَرَاتٍ
+    <span>“Annabi ﷺ ba ya fita ranar Idi har sai ya ci dabino.”<br>An ruwaito yana cin su da mara - 1,3,5.</span>
+    </div>
+    <span class="badge">Sahih al-Bukhari 953</span>
+
+    <h4 style="color:var(--green); margin-top:15px;">B. Idul-Adha (Babbar Sallah)</h4>
+    <p>Ana so a jinkirta cin abinci har sai bayan sallar Idi, kuma ya ci daga cikin abin da aka yanka idan ya samu.</p>
+    <div class="note-box">Hikimar: A Fitr ana nuna an kammala azumi - sai a ci. A Adha ana so a fara da abin layya.</div>
+  </div>
+
+  <div class="card">
+    <h3>3. Yin Wanka da Ado</h3>
+    <ul>
+      <li>Yi wankan Idi (Irin wankan Janaba da Niyyar Idi)</li>
+      <li>Sanya tufafi mafi kyau</li>
+      <li>Sanya turare ga namiji</li>
+      <li>Fita cikin nutsuwa da kaskantar da kai</li>
+    </ul>
+    <div class="danger-box">Amma kada mutum ya ɗauka cewa dole sai ya sanya sabon Kaya, Idan Allah ya yassare maka ka sanya idan Allah bai yassare maka ba ka sanya tsofaffi masu kyau.</div>
+  </div>
+
+  <div class="card">
+    <h3>4. Lokacin Sallar Idi</h3>
+    <p>Ana fara sallar Idi bayan rana ta fito kuma ta ɗan ɗaga (kimanin minti 15-20 bayan fitowar rana).</p>
+    <p>lokacinta yana ci gaba har zuwa kafin zawali (rana ta karkata).</p>
+    <div class="dark-box">
+      <b>Sallar Idi ba ta da:</b><br>
+      ❌ Adhan (Kiran Sallah)<br>
+      ❌ Iqama (Tada Iƙama)<br><br>
+      Annabi ﷺ da Sahabbai ba su yi kiran sallah ko iqama domin Sallar Idi ba.
+    </div>
+    <div class="hadith-box">
+      وَأَخْبَرَنِي عَطَاءٌ ، عَنْ ابْنِ عَبَّاسٍ ، وَعَنْ جَابِرِ بْنِ عَبْدِ اللَّهِ ، قَالَا : لَمْ يَكُنْ يُؤَذَّنُ يَوْمَ الْفِطْرِ وَلَا يَوْمَ الْأَضْحَى
+        <span><b>Fassara:</b> Ba a yin kiran sallah (Adhan) a ranar Karamar Sallah da Babbar Sallah ba. Ana shiga sallar Idi kai tsaye ba tare da Adhan ko Iqama ba, tun a zamanin Annabi ﷺ da Khalifofi.<br><br><b>Darasi:</b> Sallar Idi ba ta da kiran sallah, sabanin sallolin farilla biyar.</span>
+    </div>
+    <span class="badge">Bukhari 960</span>
+    <span class="badge">Muslim 886</span>
+  </div>
+
+  <div class="card">
+    <h3>5A. Yadda Ake Sallar Idi - Raka'a Ta Farko</h3>
+    <ol>
+      <li>Ka tsaya kana fuskantar Qibla, ka yi niyya a zuciya</li>
+      <li>Sai liman ya yi Takbiratul Ihram: <b>اللَّهُ أَكْبَرُ</b></li>
+      <li>Sai ya yi ƙarin kabbara a cikin raka'ar farko</li>
+    </ol>
+    <h4 style="color:var(--green);">Yawan Kabbarbarorin:</h4>
+    <div class="hadith-box">
+    أَنَّ النَّبِيَّ ﷺ كَبَّرَ فِي الْعِيدِ اثْنَتَيْ عَشْرَةَ تَكْبِيرَةً، سَبْعًا فِي الْأُولَى، وَخَمْسًا فِي الْآخِرَةِ
+    <span><b>Ma'ana:</b> An ruwaito cewa Annabi ﷺ ya yi kabbara 12: bakwai a raka'a ta farko, biyar a raka'a ta biyu.<br> Wannan ya tabbata.</span>
+    </div>
+    <span class="badge">Abu Dawud 1149 - Hasan - Al-Albani ya inganta shi</span>
+    <div class="note-box">
+      <b>Bayani:</b> Kabbara 7 a raka'a ta farko <b>ban da Takbiratul Ihram</b>. A wasu riwayoyin yawan ya bambanta, kuma duk malaman fiqhu sun yi magana a kai. Abin da ya fi shahara kuma ya tabbata shi ne 7 da 5.
+    </div>
+    <p>Bayan kabbara, sai a karanta Fatiha, sannan abinda ya sawwaƙa daga Al-qur'ani, sannan a ci gaba da raka'ar kamar yadda aka saba (ruku'u, sujjada).</p>
+  </div>
+
+  <div class="card">
+    <h3>5B. Shin Ana Daga Hannu A Kabbara 7 da 5?</h3>
+    <p>Wannan batu ne da malamai suka yi magana a kai, saboda babu hadisi ingantacce sarai daga Annabi ﷺ da ke nuna ya daga hannu a kowace kabbara ta Idi.</p>
+    <table>
+      <tr><th>Ra'ayi</th><th>Dalili</th><th>Masu Riko</th></tr>
+      <tr><td>Ana daga hannu a kowace kabbara</td><td>Qiyasi da daga hannu a Takbiratul Ihram, da aiki da ya zo daga Ibn Umar رضي الله عنهما cewa ya kasance yana daga hannu a kowace kabbarar Idi</td><td>Wannan shi ne aiki a Mazhabar Shafi'iyya da Hanabilah a zahiri. Ibn Qudama a Al-Mughni ya ambata haka</td></tr>
+      <tr><td>Ba a daga hannu sai a Takbiratul Ihram kadai</td><td>Babu ingantaccen hadisi Marfu'i daga Annabi ﷺ. Asalin ibada tawqifiyya ce - ba a yin qiyasi. Hadisin daga hannu daga Ibn Umar Mauquf ne, ba Marfu'i ba</td><td>Wasu Hanafiya da wasu Malaman Hadisi na yanzu irin su Al-Albani sun tafi a kan cewa daga hannu ba Sunnah ba ce sai a Ihram kawai, amma idan mutum ya daga babu laifi</td></tr>
+    </table>
+    <div class="hadith-box">
+    لَمْ يَثْبُتْ عَنِ النَّبِيِّ ﷺ أَنَّهُ كَانَ يَرْفَعُ يَدَيْهِ فِي تَكْبِيرَاتِ الْعِيدِ إِلَّا فِي تَكْبِيرَةِ الْإِحْرَامِ
+      <span><b>Ma'ana:</b> Bai tabbata daga Annabi ﷺ cewa ya kasance yana daga hannayensa a kabbarbarin Idi ba, sai a Takbiratul Ihram.</span>
+    </div>
+      <span class="badge">Mauquf Ibn Umar - Musannaf Ibn Abi Shaybah 5735</span>
+    <div class="note-box">
+      <b>Hukunci Mai Sauƙi:</b><br>
+      1. Daga hannu a <b>Takbiratul Ihram</b> - Sunnah ce ba tare da sabani ba.<br>
+      2. Daga hannu a <b>sauran kabbara 7 da 5</b> - Al'amari ne da bai tabbata daga Annabi ﷺ ba, don haka ba dai-dai bane ɗaga hannu a wajan kabbarorin.
+    </div>
+    
+    <div class="danger-box">
+      <b>Abin Lura:</b> Mafi alkahairin shiriya itace shiriyar Annabi ﷺ, don haka aikin ibn Umar رضي الله عنهما anan bazai zama hujja ba. 
+    </div>
+  </div>
+      
+  <div class="card">
+    <h3>6. Raka'a Ta Biyu</h3>
+    <ol>
+      <li>Sai ya tashi zuwa raka'a ta biyu</li>
+      <li>Ya yi kabbara 5, ban da kabbara ta tashi daga sujjadar raka'a ta farko</li>
+      <li>Sai ya karanta Fatiha da wata sura</li>
+      <li>Sannan ya kammala raka'ar kamar yadda ake yi a kowace sallah</li>
+    </ol>
+    <table>
+      <tr><th>Raka'a</th><th>Kabbara</th><th>Bayanin</th></tr>
+      <tr><td>1</td><td>Takbiratul Ihram + 7</td><td>Jimilla 8 a farawa</td></tr>
+      <tr><td>2</td><td>Kabbarar tashi + 5</td><td>Jimilla 6</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>7. Me Ake Karantawa A Raka'o'in?</h3>
+    <p>Ba a wajabta wata sura guda ba. Amma daga Sunnah:</p>
+    <h4 style="color:var(--green);">Tsari na 1:</h4>
+    <div class="ayah-box">
+    سَبِّحِ اسْمَ رَبِّكَ الْأَعْلَىٰ - a raka'a ta 1<br>
+    هَلْ أَتَاكَ حَدِيثُ الْغَاشِيَةِ - a raka'a ta 2
+    <span>Ana karanta Sabbihisma da Ghashiya.</span>
+    </div>
+    <span class="badge">Sahih Muslim 878</span>
+
+    <h4 style="color:var(--green); margin-top:10px;">Tsari na 2:</h4>
+    <div class="ayah-box">
+    ق ۚ وَالْقُرْآنِ الْمَجِيدِ - a raka'a ta 1<br>
+    اقْتَرَبَتِ السَّاعَةُ وَانشَقَّ الْقَمَرُ - a raka'a ta 2
+    <span>Ana karanta Qaf da Iqtarabat.</span>
+    </div>
+    <span class="badge">Sahih Muslim 891</span>
+    <div class="note-box">Saboda haka ba dole ba ne kullum a karanta sura guda. Liman zai iya canzawa.</div>
+  </div>
+
+  <div class="card">
+    <h3>8. Bayan Sallah: Khuɗuba</h3>
+    <p>Bayan an gama raka'a biyu, liman zai yi khudubar Idi.</p>
+    <div class="dark-box">
+      Wannan ya bambanta da Juma'a:<br>
+      <b>A Idi: Sallah ce farko, sannan khuduba.</b><br>
+      <b>A Juma'a: Khuduba ce farko, sannan sallah.</b>
+    </div>
+    <div class="hadith-box">
+    كَانَ رَسُولُ اللَّهِ ﷺ وَأَبُو بَكْرٍ وَعُمَرُ يُصَلُّونَ الْعِيدَيْنِ قَبْلَ الْخُطْبَةِ
+    <span>“Manzon Allah ﷺ da Abu Bakr da Umar sun kasance suna yin sallar Idi kafin khuduba.”</span>
+    </div>
+    <span class="badge">Bukhari 963, Muslim 888</span>
+    <div class="danger-box"><b>Abin Lura:</b> Wannan Huɗubar anayinta ne bayan an idar da sallar ne, Sai da dayawa daga cikin Masallata basa Sauraranta, wasu ma basu san anayin huɗuba ba ma bayan an idar da sallar, da anyi Sallama sai mutane su naɗe dadduma su watse, wasu su tafi gida wasu kuma bukukuwan sallah, kaɗan ne suke tsayawa don Sauraran wannan Huɗubar, wanda hakan ba dai-dai bane, Ya kamata ace kowa ya tsaya ya saurara kafin ya tafi al-amuransa.</div>
+  </div>
+
+  <div class="card">
+    <h3>9. Shin Mace Tana Zuwa Sallar Idi?</h3>
+    <div class="hadith-box">
+    أُمِرْنَا أَنْ نُخْرِجَ الْحُيَّضَ وَالْعَوَاتِقَ وَذَوَاتِ الْخُدُورِ
+    <span>“An umarce mu mu fitar da mata masu haila, 'yan mata da mata masu zama a gidajensu zuwa wurin Idi.” — Ummu Atiyyah رضي الله عنها</span>
+    </div>
+    <span class="badge">Bukhari 971, Muslim 890</span>
+    <div class="note-box"><b>Mace mai haila ba ta yin sallar,</b> tana halartar wurin ne domin samun alheri da addu'a da sauraron khuduba, amma tana nesa da wurin sallah.</div>
+  </div>
+
+  <div class="card">
+    <h3>10. Tafiyar Zuwa Idi - Sunnah</h3>
+    <div class="hadith-box">
+    كَانَ النَّبِيُّ ﷺ إِذَا كَانَ يَوْمُ عِيدٍ خَالَفَ الطَّرِيقَ
+    <span>“Annabi ﷺ idan ranar Idi ta kasance, yana sauya hanya - yana tafiya ta wata hanya, yana dawowa ta wata.” — Jabir رضي الله عنه</span>
+    </div>
+    <span class="badge">Bukhari 986</span>
+    <div class="note-box">Hikimar da malamai suka fada: Don hanyoyi su shaida, da yawaita saduwar da Musulmai, da bayyana alamar Musulunci.</div>
+  </div>
+
+  <div class="card">
+    <h3>11. Taƙaitaccen Tsari</h3>
+    <div class="dark-box">
+      <b>Raka'a ta 1:</b><br>
+      Takbiratul Ihram → kabbara 7 → Fatiha → Sura (A'la ko Qaf) → Ruku'u → Sujjada<br><br>
+      <b>Raka'a ta 2:</b><br>
+      Tashi → kabbara 5 → Fatiha → Sura (Ghashiya ko Qamar) → Ruku'u → Sujjada → Tashahhud → Sallama<br><br>
+      <b>Bayan sallama:</b> Khudubar Idi - Kunnuwa<br><br>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <a href="sallah.html" class="btn-home">← Koma Shafin Baya</a>
+    <a href="#top" class="btn-top">↑ Koma Sama</a>
+  </div>
+
+</div>
+</body>
+</html>
