@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darasi - Sallar Dare Tahajjud</title>
+<style>
+  :root{--green:#0d2e1a;--gold:#c9a227;--bg:#fdfcf5;}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Segoe UI', Tahoma, sans-serif; background:var(--bg); color:#222; line-height:1.85;}
+  .top-header{background:var(--green); color:#fff; padding:20px 15px; text-align:center; border-radius:25px;}
+  .header-text h1{font-size:19px; margin:0 0 4px; color:#fff; font-weight:800; text-transform:uppercase;}
+  .header-text p{font-size:14px; color:#f5d76e; margin:0 0 15px;}
+  .btn-header{display:inline-block; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.35); color:#fff; padding:8px 22px; border-radius:25px; text-decoration:none; font-size:14px; font-weight:bold;}
+  .content{padding:10px; max-width:800px; margin:0 auto;}
+  .card{background:#fff; border:1px solid #e8e0c0; border-radius:12px; padding:16px; margin:14px 0; box-shadow:0 2px 6px rgba(0,0,0,0.04);}
+  .card h3{color:var(--green); font-size:18px; margin-bottom:10px; border-left:4px solid var(--gold); padding-left:10px;}
+  .ayah-box{background:#fdf6e3; border:1px solid #e7d9a3; border-right:4px solid var(--gold); padding:14px; border-radius:8px; margin:12px 0; text-align:center; direction:rtl; font-size:20px; line-height:2;}
+  .ayah-box span{font-size:13.5px; direction:ltr; display:block; margin-top:10px; text-align:left; color:#333; line-height:1.7; font-family:'Segoe UI', sans-serif;}
+  .quran-box{background:#eef6ef; border-right:4px solid var(--green); padding:12px; border-radius:8px; margin:12px 0; text-align:center; direction:rtl; font-size:19px;}
+  .dark-box{background:var(--green); color:#fff; padding:15px; border-radius:10px; margin:15px 0; font-size:14px; line-height:1.9;}
+  .note-box{background:#eef6ef; border-left:4px solid var(--green); padding:10px 12px; border-radius:6px; margin:12px 0; font-size:13px;}
+  .badge{display:inline-block; background:#eef6ef; color:var(--green); padding:3px 10px; border-radius:20px; font-size:11px; font-weight:bold; border:1px solid #c8e6c9;}
+  .step-list{list-style:none; padding:0;}
+  .step-list li{background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px 12px; margin:8px 0; display:flex; gap:10px;}
+  .step-num{background:var(--green); color:#fff; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:bold; flex-shrink:0;}
+  .bottom-nav{text-align:center; padding:25px 15px; border-top:2px solid #e8e0c0; margin-top:25px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap;}
+  .btn-home{background:var(--green); color:#fff; padding:10px 22px; border-radius:25px; text-decoration:none; font-size:14px; font-weight:bold;}
+  .btn-top{background:#fff; color:var(--green); border:1.5px solid var(--green); padding:10px 22px; border-radius:25px; text-decoration:none; font-size:14px; font-weight:bold;}
+  .hadith-box { background: linear-gradient(135deg, #f0fdf4 50%, #dcfce7 100%); border-right: 4px solid #16a34a; border-left: 1px solid #bbf7d0; border-top: 1px solid #bbf7d0; border-bottom: 1px solid #bbf7d0; border-radius: 12px; padding: 16px 18px; margin: 14px 0; font-family: 'Amiri', 'Traditional Arabic', serif; font-size: 1.15em; line-height: 2; color: #14532d; position: relative; box-shadow: 0 2px 8px rgba(22, 163, 74, 0.08);}
+  .hadith-box::before { content: "﷽ Hadisi"; position: absolute; top: -10px; right: 14px; background: #16a34a; color: white; font-size: 0.65em; font-family: sans-serif; padding: 2px 10px; border-radius: 20px; letter-spacing: 0.5px;}
+  .hadith-box span {display: block; margin-top: 10px;  font-family: sans-serif; font-size: 0.85em; line-height: 1.6;  color: #334159; border-top: 1px dashed #86efac; padding-top: 8px;}
+</style>
+</head>
+<body id="top">
+
+<header class="top-header">
+  <div class="header-text">
+    <h1>🌙 SALLAR DARE / TAHAJJUD</h1>
+    <p>Qiyamul Layl - Falala da Yadda ake Yinta</p>
+    <a href="sallah.html" class="btn-header">← Koma Shafin Baya</a>
+  </div>
+</header>
+
+<div class="content">
+
+  <div class="card">
+    <h3>1. Menene Tahajjud?</h3>
+    <div class="quran-box">
+    التهجُّد: هُوَ قِيَامُ اللَّيْلِ لِلصَّلَاةِ بَعْدَ النَّوْمِ
+    <span style="font-size:13px; direction:ltr; display:block; text-align:left; margin-top:8px;"><b>Ma'ana:</b> Tahajjud ita ce tashi da dare domin yin sallah bayan an yi barci. Amma Qiyam al-Layl ta fi faɗi: tana iya haɗa sallah, karatun Qur'ani, zikiri da addu'a a cikin dare.</span>
+    </div>
+    <div class="ayah-box">
+    وَمِنَ اللَّيْلِ فَتَهَجَّدْ بِهِ نَافِلَةً لَّكَ
+    <span>“Ka yi Tahajjud da shi a wani ɓangare na dare, a matsayin nafila gare ka.”</span>
+    </div>
+    <span class="badge">Suratul Isra'i 17:79</span>
+  </div>
+
+  <div class="card">
+    <h3>2. Lokacin Sallar Dare</h3>
+    <p>Lokacinta yana farawa ne <b>bayan Isha'i</b>, kuma yana ƙarewa da shigar lokacin Asuba. Mafi falalar lokacin ita ce <b>ƙarshen dare, sulusin ƙarshe</b>.</p>
+    <div class="hadith-box">
+    أَفْضَلُ الصَّلَاةِ بَعْدَ الْفَرِيضَةِ صَلَاةُ اللَّيْلِ
+    <span>“Falalar sallah mafi girma bayan farilla ita ce Sallar Dare.”</span>
+    </div>
+    <span class="badge">Muslim: 1163</span>
+    <div class="hadith-box"> 
+      يَنْزِلُ رَبُّنَا تَبَارَكَ وَتَعَالَى كُلَّ لَيْلَةٍ إِلَى السَّمَاءِ الدُّنْيَا
+    <span><b>Fassara:</b> "Allah yana kiran bayinsa a ƙarshen dare, yana cewa wanda yake roƙonsa Ya amsa masa, wanda yake neman gafara Ya gafarta masa"</span>
+    </div>
+    <span class="badge">Bukhari: 1145</span>
+    <span class="badge">Muslim: 758</span>
+  </div>
+
+  <div class="card">
+    <h3>3. Nawa ake Yin Raka'o'in?</h3>
+    <p>Babu adadi guda da aka wajabta. Annabi ﷺ ya yi ta da adadi daban-daban.</p>
+    <div class="hadith-box">
+    مَا كَانَ رَسُولُ اللَّهِ ﷺ يَزِيدُ فِي رَمَضَانَ وَلَا فِي غَيْرِهِ عَلَى إِحْدَى عَشْرَةَ رَكْعَةً
+    <span>“Manzon Allah ﷺ bai kasance yana ƙara fiye da raka’a goma sha ɗaya ba, a Ramadan ko waninsa.”</span>
+    </div>
+    <span class="badge">Bukhari: 1147</span>
+    <span class="badge">Muslim: 738</span>
+    <div class="note-box">Wannan yana nuna mafi yawan aikinsa shi ne raka'a 11 tare da Witr. A wata ruwayar an ambaci raka'a 13. Saboda haka zaka iyayin raka'a 13 har witr.</div>
+  </div>
+
+  <div class="card">
+    <h3>4. Yadda Ake Yin Sallar Dare</h3>
+    <p>Sallar ana yin ta ne biyu-biyu, idan akayi huɗu a huta sannan a cigaba kamar yadda sunnah ta nuna</p>
+    <div class="hadith-box">
+    صَلَاةُ اللَّيْلِ مَثْنَى مَثْنَى
+    <span>“Sallar dare raka’a biyu-biyu ce.”</span>
+    </div>
+    <span class="badge">Bukhari: 990</span>
+    <span class="badge">Muslim: 749</span>
+    <div class="dark-box">Saboda haka zaka iya yin:<br>2 → sallama<br>2 → sallama<br>2 → sallama<br>haka gwargwadon ƙarfinka.</div>
+  </div>
+
+  <div class="card">
+    <h3>5. Misalin Yadda Annabi ﷺ Yake Yinta</h3>
+    <p>Daga hadisin Aisha رضي الله عنها: Annabi ﷺ yana yin 4 raka’a, sannan 4, sannan 3 Witr. Amma kar a fahimci cewa yana yin raka’a huɗu ne da sallama ɗaya. A a, Hadisin yana bayyana yawan raka'o'in ne, yayin da hadisin dake sama ya bayyana cewa:</p>
+    <div class="quran-box">صَلَاةُ اللَّيْلِ مَثْنَى مَثْنَى <br> Ana yin raka'o'in dare biyu-biyu</div>
+  </div>
+
+  <div class="card">
+    <h3>6. Yadda Ake Raka'a Biyun</h3>
+    <ul class="step-list">
+      <li><span class="step-num">1</span><span><b>Raka'a ta Farko:</b> Niyya a zuciya, Takbiratul Ihram (Allahu Akbar), Addu'ar bude sallah, Fatiha, Wata sura, Ruku'i, Tashi daga ruku'i, Sujuda biyu</span></li>
+      <li><span class="step-num">2</span><span><b>Raka'a ta Biyu:</b> Fatiha, Wata sura, Ruku'i, Sujuda biyu, Tashahhud, Salati ga Annabi ﷺ, Addu'a, Sallama dama da hagu</span></li>
+      <li><span class="step-num">3</span><span>Sai ka sake yin wasu raka'a biyun, Sannan ka huta.</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>7. Shin Ana Tsawaita Karatu?</h3>
+    <p>Eh. Wannan yana daga cikin Sunnah ta Sallar Dare. Annabi ﷺ ya kasance yana tsawaita tsayuwa, ruku'i da sujuda.</p>
+    <div class="hadith-box">
+    صَلَّيْتُ مَعَ النَّبِيِّ ﷺ لَيْلَةً فَلَمْ يَزَلْ قَائِمًا حَتَّى هَمَمْتُ بِأَمْرِ سَوْءٍ قُلْنَا وَمَا هَمَمْتَ قَالَ هَمَمْتُ أَنْ أَقْعُدَ وَأَذَرَ النَّبِيَّ ﷺ 
+      <span>
+        <b>Fassara:</b> Abdullah bin Mas'ud (RA) yace: Na yi salla tare da Annabi ﷺ wata rana da daddare, bai gushe ba yana tsaye har na yi tunanin wani mummunan abu. Sai muka ce mene ka yi tunani? Yace na yi tunanin in zauna in bar Annabin ﷺ a tsaye shi kadai.<br>
+        <b>Fa'ida:</b> Hadisin yana nuna yadda Annabi ﷺ ya tsawaita tsayuwa a Sallar.
+      </span>
+    </div>
+      <span class="badge">Bukhari: 1135</span>
+    <div class="hadith-box">
+    مَا كَانَ رَسُولُ اللَّهِ ﷺ يَزِيدُ فِي رَمَضَانَ وَلَا فِي غَيْرِهِ عَلَى إِحْدَى عَشْرَةَ رَكْعَةً يُصَلِّي أَرْبَعًا فَلَا تَسْأَلْ عَنْ حُسْنِهِنَّ وَطُولِهِنَّ ثُمَّ يُصَلِّي أَرْبَعًا ثُمَّ يُصَلِّي ثَلَاثًا 
+      <span>
+        <b>Fassara:</b> Aisha (RA) tace: Manzon Allah ﷺ bai wuce raka'a goma sha daya ba a Ramadan da wajen Ramadan, yana sallar hudu kar ka tambayi kyawunsu da tsawonsu, sannan ya sake hudu, sannan yayi uku na Witri.<br>
+      </span>
+    </div>
+      <span class="badge">Muslim 738a Sahih</span>
+      <div class="note-box">Idan kana iya karanta Qur'ani da yawa cikin dare, yana da kyau ka tsawaita karatun. Amma ba wajibi ba ne.</div>
+    </div>
+
+  <div class="card">
+    <h3>8. Wane Surori Ake Karantawa?</h3>
+    <div class="ayah-box">
+    فَاقْرَءُوا مَا تَيَسَّرَ مِنَ الْقُرْآنِ
+    <span>“Ku karanta abin da ya sauƙaƙa muku daga Al-Qur’ani.”</span>
+    </div>
+    <span class="badge">Suratul Muzammil 73:20</span>
+    <div class="note-box">Babu wata sura ta musamman da aka wajabta. Kana iya karanta duk abin da Allah Ya sauƙaƙa maka. Amma Annabi ﷺ ya kasance yana yin dogon karatu a wasu lokuta.</div>
+  </div>
+  
+  <div class="card">
+    <h3>9. Shin Ana Karatu a bayyane?</h3>
+    <p>Eh. Ana iya karatu a bayyane a Sallar Dare. Nana Aisha Allah ya yarda da ita ta bayyana cewa Annabi ﷺ wani lokaci yana karatu da ƙarfi, wani lokaci kuma a hankali.</p>
+    <div class="hadith-box">
+    كَانَتْ قِرَاءَةُ النَّبِيِّ ﷺ عَلَى قَدْرِ مَا يَسْمَعُهُ مَنْ فِي الْحُجْرَةِ وَهُوَ فِي الْبَيْتِ 
+       <span>
+         <b>Fassara:</b> An karbo daga Ibn Abbas (RA) yace: Karatun Annabi ﷺ a gida yana daidai da yadda wanda ke cikin daki na ciki zai ji shi.<br>
+       </span>
+    </div>
+       <span class="badge">Abu Dawud: 1327</span>
+    <div class="note-box"><b>Wata ruwayar hadisi mai number 1327:</b> Abu Sa'id Al-Khudri yace Annabi ﷺ ya fito masallaci yaji mutane suna karatu da babbar murya sai yace: Ku sani kowannenku yana kiran Ubangijinsa a hankali, kada daya ya cutar da daya, kada a daga murya a karatu ko a salla akan muriyar wani.</div>
+    <div class="hadith-box">
+    سَأَلْتُ عَائِشَةَ كَيْفَ كَانَتْ قِرَاءَةُ النَّبِيِّ ﷺ بِاللَّيْلِ أَكَانَ يُسِرُّ بِالْقِرَاءَةِ أَمْ يَجْهَرُ فَقَالَتْ كُلُّ ذَلِكَ قَدْ كَانَ يَفْعَلُ رُبَّمَا أَسَرَّ وَرُبَّمَا جَهَرَ
+       <span>
+         <b>Fassara:</b> Abdullah bin Abi Qais yace na tambayi Aisha yadda karatun Annabi ﷺ yake da dare, shin a sirri yake karatu ko a bayyane? Sai tace dukkanin biyu ya kasance yana yi, wani lokaci a sirri, wani lokaci a bayyane.<br>
+       </span>
+     </div>
+       <span class="badge">Tirmidhi 449 Hasan Sahih</span>
+     <div class="note-box"><b>Ka'ida:</b> Zaka iya karatu a bayyane, zaka iya karatu a hankali. Amma kada ka ɗaga murya har ka dami masu barci ko masu sallah.</div>
+   </div>
+    
+
+  <div class="card">
+    <h3>10. Witri - Karshen Sallar Dare</h3>
+    <div class="hadith-box">
+    اجْعَلُوا آخِرَ صَلَاتِكُمْ بِاللَّيْلِ وِتْرًا
+    <span>“Ku sanya Mara ya zama ƙarshen sallarku ta dare.”</span>
+    </div>
+    <span class="badge">Bukhari: 998</span>
+    <span class="badge">Muslim: 751</span>
+    <div class="note-box">Za ka iya yin Witri: 1, 3, 5, 7, 9, 11 — gwargwadon abin da aka tabbatar a Sunnah.</div>
+   <div class="hadith-box">
+    مَنْ خَافَ أَنْ لَا يَقُومَ مِنْ آخِرِ اللَّيْلِ فَلْيُوتِرْ أَوَّلَهُ وَمَنْ طَمِعَ أَنْ يَقُومَ آخِرَهُ فَلْيُوتِرْ آخِرَ اللَّيْلِ فَإِنَّ صَلَاةَ آخِرِ اللَّيْلِ مَشْهُودَةٌ   
+    <span>
+      <b>Fassara:</b> Wanda ya ji tsoron ba zai tashi a karshen dare ba to yayi Witri a farkon dare, wanda kuma yake kwadayin zai tashi a karshen dare to yayi Witri a karshen dare, domin sallar karshen dare ana halartarta (Mala'iku suna halarta).<br>
+    </span>
+   </div> <span class="badge">Muslim: 755</span>
+
+    
+    <div class="hadith-box">
+    أَوْتِرُوا قَبْلَ أَنْ تُصْبِحُوا 
+    <span>
+      <b>Fassara:</b> Ku yi Witri kafin ku wayi gari (kafin alfijir ya keto).<br>
+    </span>
+    </div>
+    <span class="badge">Muslim: 754</span>
+  </div>
+  
+  <div class="card">
+    <h3>11. Idan Zaka Yi Raka'a 3 Witr</h3>
+    <p>Akwai hanyoyin da aka tabbatar. Daya daga cikinsu:</p>
+    <div class="dark-box">
+    2 raka’a → sallama → 1 raka'a Witr<br>
+    Wannan hanya ce mai sauƙi kuma bayyananniya. A raka'ar Witr zaka karanta Fātiha da abin da ya sauƙaƙa maka.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>12. Addu'a a Cikin Tahajjud</h3>
+    <div class="ayah-box">
+    أَقْرَبُ مَا يَكُونُ الْعَبْدُ مِنْ رَبِّهِ وَهُوَ سَاجِدٌ، فَأَكْثِرُوا الدُّعَاءَ
+    <span>“Lokacin da bawa yake mafi kusanci da Ubangijinsa shi ne lokacin da yake cikin sujuda; saboda haka ku yawaita addu'a.”</span>
+    </div>
+    <span class="badge">Muslim 482</span>
+    <h3>Qunutul Witr</h3>
+    <p>Ana iya yin Al-Qunūt a Witr. Addu'ar da aka koyar wa al-Hasan ibn Ali رضي الله عنهما:</p>
+    
+    <div class="ayah-box">
+    اللَّهُمَّ اهْدِنِي فِيمَنْ هَدَيْتَ، وَعَافِنِي فِيمَنْ عَافَيْتَ، وَتَوَلَّنِي فِيمَنْ تَوَلَّيْتَ، وَبَارِكْ لِي فِيمَا أَعْطَيْتَ، وَقِنِي شَرَّ مَا قَضَيْتَ، فَإِنَّكَ تَقْضِي وَلَا يُقْضَى عَلَيْكَ، وَإِنَّهُ لَا يَذِلُّ مَنْ وَالَيْتَ، وَلَا يَعِزُّ مَنْ عَادَيْتَ، تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ
+    <span>
+        <b>Fassara:</b> Ya Allah Ka shiryar da ni cikin wadanda Ka shiryar, Ka bani lafiya cikin wadanda Ka baiwa lafiya, Ka kula dani cikin wadanda Ka kula, Ka sanya albarka a cikin abin da Ka bani, Ka kare ni daga sharrin abin da Ka hukunta, domin Kai ne Mai hukunci ba'a hukunta a kanka ba, lallai wanda Ka ji banta da shi baya wulakanta, wanda Ka yi gaba da shi kuma baya daukaka, Ka yi albarka Ya Ubangijinmu kuma Ka daukaka.<br><br>
+        <b>Marawaici:</b> Hadisin Al-Hasan bin Ali (RA)<br><br>
+    </span>
+    </div>
+    <span class="badge">Abu Dawud: 1425</span>
+    <span class="badge">Tirmidhi: 464 – sahih</span>
+    <span class="badge">Sunan an-Nasa'i: 1745</span>
+    <span class="badge">Sunan Ibn Majah: 1178</span>
+    <span class="badge">Musnad Ahmad: 1718</span>
+ 
+    <div class="ayah-box">
+    اللَّهُمَّ إِنِّي أَعُوذُ بِرِضَاكَ مِنْ سَخَطِكَ وَبِمُعَافَاتِكَ مِنْ عُقُوبَتِكَ وَأَعُوذُ بِكَ مِنْكَ لَا أُحْصِي ثَنَاءً عَلَيْكَ أَنْتَ كَمَا أَثْنَيْتَ عَلَى نَفْسِكَ
+    <span>“Ya Allah, ina neman tsari da yardarKa daga fushinKa, da afuwarKa daga uqubarKa, kuma ina neman tsari da Kai daga Kai, ba zan iya kirga yabonKa ba, Kai ne kamar yadda Ka yabi KanKa.”<br><br>Ana karantawa a karshen Qunutin Witri kafin ruku'u ko a cikin sujada.</span>
+    </div>
+    <span class="badge">Abu Dawud: 1427</span>
+    <span class="badge">Tirmidhi: 3566 – sahih</span>
+  
+    <h3>Wasu Addu'oin Witri</h3>
+    
+    <div class="ayah-box">
+    اللَّهُمَّ إِنِّي أَعُوذُ بِرِضَاكَ مِنْ سَخَطِكَ، وَبِمُعَافَاتِكَ مِنْ عُقُوبَتِكَ، وَأَعُوذُ بِكَ مِنْكَ لَا أُحْصِي ثَنَاءً عَلَيْكَ أَنْتَ كَمَا أَثْنَيْتَ عَلَى نَفْسِكَ
+    <span>
+      <b>Fassara:</b> Ya Allah ina neman tsari da yardarKa daga fushinKa, da afuwarKa daga uqubarKa, ina neman tsari da Kai daga Kai, ba zan iya kirga yabonKa ba, Kai kamar yadda Ka yabi KanKa ne.<br>
+      <b>Yaushe ake yinta:</b> A cikin Qunuti bayan Qunutin farko.
+    </span>
+    </div>
+    <span class="badge">Abu Dawud: 1427 Sahih</span>
+    
+    <div class="ayah-box">
+    اللَّهُمَّ إِيَّاكَ نَعْبُدُ وَلَكَ نُصَلِّي وَنَسْجُدُ وَإِلَيْكَ نَسْعَى وَنَحْفِدُ نَرْجُو رَحْمَتَكَ وَنَخْشَى عَذَابَكَ إِنَّ عَذَابَكَ بِالْكُفَّارِ مُلْحَقٌ
+    <span>
+      <b>Fassara:</b> Ya Allah Kai kadai muke bautawa, kuma gare Ka muke Sallah kuma muke sujada, kuma zuwa gare Ka muke gudu muna aiki, muna fatan rahamarKa muna tsoron azabarKa, lallai azabarKa tana riske kafirai.<br>
+      <b>Tushe:</b> Wannan shi ake kira Qunutil Umar (RA) da Ubay bin Ka'ab suka ruwaito a Muwatta Malik Kitabus Salat - Babu Du'a al-Qunut.
+    </span>
+    </div>
+    <span class="badge">Muwatta Imam Malik: 1/217 </span>
+    <span class="badge">Sunan al-Kubra lil-Baihaqi: 2/211 - No. 3125 & 3126</span>
+    <span class="badge">Musannaf Ibn Abi Shaybah: 2/108</span><br>
+    <div class="note-box"><b>Bayanin:</b> Umar (RA) da Ubay bin Ka'ab (RA) ne suka kasance suna karanta wannan Qunutin a Witri a cikin Ramadana a Masallacin Annabi. Malamai sun ce dukansu Sunnah ne, za ka iya hada na farko (Allahumma ihdini) da wannan a Qunuti guda.</div>
+    
+    <div class="ayah-box">
+    سُبْحَانَ الْمَلِكِ الْقُدُّوسِ - 3 sau - سُبُّوحٌ قُدُّوسٌ رَبُّ الْمَلَائِكَةِ وَالرُّوحِ
+    <span>
+      <b>Fassara:</b> Tsarki ya tabbata ga Sarki Mai Tsarki - Ana fada sau 3 bayan an sallame daga Witri, a na ukun sai a daga murya.<br>
+    </span>
+    </div>
+    <span class="badge">Abu Dawud: 1430</span>
+    <span class="badge">Nasa'i: 1732 Sahih</span>
+  
+    
+    <div class="ayah-box">
+    رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ
+    <span>
+      <b>Fassara:</b> Ya Allah Ka bamu alheri a duniya da alheri a lahira Ka tsare mu daga azabar wuta - Ana iya yin kowacce addu'a mai kyau a cikin Qunuti.
+    </span>
+    </div>
+    <span class="badge">Suratul Baqarah 2:201</span>
+    <span class="badge">Bukhari: 6389</span>
+    <span class="badge">Muslim: 2690</span>
+    <span class="badge">Abi Dawud: 1519</span>
+    <span class="badge">Ana iya yin kowacce addu'a ta alkhairi a Witri</span>
+   </div>
+  
+  <div class="card">
+    <h3>13. Idan Kana Tsoron Ba Zaka Tashi Ba</h3>
+    <p>Ya yi Witr kafin ya kwanta. Annabi ﷺ ya ce wa Abu Hurayrah ya yi Witr kafin ya yi barci. Amma idan ya san zai iya tashi ƙarshen dare, ƙarshen dare ya fi falala.</p>
+    <div class="hadith-box">
+    عَنْ أَبِي هُرَيْرَةَ قَالَ: أَوْصَانِي خَلِيلِي ﷺ بِثَلَاثٍ: صِيَامِ ثَلَاثَةِ أَيَّامٍ مِنْ كُلِّ شَهْرٍ، وَرَكْعَتَيِ الضُّحَى، وَأَنْ أُوتِرَ قَبْلَ أَنْ أَنَامَ
+    <span>
+        “Abin sona (Annabi) ﷺ ya yi mini wasiyya da abubuwa uku: Azumin kwana uku a kowane wata, da raka'a biyu na walha, da in yi Witri kafin in yi barci.”<br><br>
+    </span>
+</div>
+    <span class="badge">Bukhari: 1981</span>
+    <span class="badge">Muslim: 721</span>
+    <div class="note-box"><b>Faidar Hadisin da ka fada:</b> Duk wanda ya ji tsoron ba zai tashi ba da daddare sai ya yi Witri kafin ya kwanta. Amma wanda ya tabbata zai tashi a karshen dare, to yin Witri a karshen dare ya fi falala, domin sallar karshen dare Mala'iku na halarta, kuma addu'a a cikinta karbabba ce. </div>
+  </div>
+
+  <div class="card">
+    <h3>14. Idan Ya Yi Witr Kafin Barci, Sannan Ya Tashi</h3>
+    <p>Ba zai sake yin Witr ba. Zai iya yin Tahajjud biyu-biyu, amma ba zai maimaita Witr ba.</p>
+    <div class="ayah-box">
+    لَا وِتْرَانِ فِي لَيْلَةٍ
+    <span>“Babu Witr biyu a dare guda.” — Abu Dawud 1439, Tirmidhi 470</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="dark-box">
+    <b>Tsarin da zaka iya bi cikin sauƙi:</b><br>
+    Isha'i → barci → tashi ƙarshen dare<br><br>
+    2 raka'a → sallama<br>
+    2 raka'a → sallama<br>
+    2 raka'a → sallama<br>
+    2 raka'a → sallama<br>
+    2 raka'a → sallama<br>
+    1 Witr<br>
+    = 11 raka'a<br><br>
+    Wannan ya yi daidai da abin da aka fi tabbatarwa daga aikin Annabi ﷺ.
+    </div>
+    <div class="note-box"><b>Muhimmin bambanci:</b> Tahajjud yawanci ana amfani da ita ga Sallar Dare bayan barci, yayin da Qiyam al-Layl ya fi faɗi kuma ya haɗa da yin ibadar dare tun bayan Isha'i ko kafin barci.</div>
+  </div>
+
+  <div class="bottom-nav">
+    <a href="sallah.html" class="btn-home">← Koma Shafin Baya</a>
+    <a href="#top" class="btn-top">↑ Koma Sama</a>
+  </div>
+
+</div>
+</body>
+</html>
